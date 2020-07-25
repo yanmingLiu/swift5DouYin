@@ -53,8 +53,6 @@
 		B5393B5A24CC63BE00AA6F58 /* feed4.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B5924CC63BE00AA6F58 /* feed4.json */; };
 		B5393B5C24CC63E900AA6F58 /* feed5.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B5B24CC63E900AA6F58 /* feed5.json */; };
 		B5393B6024CC645700AA6F58 /* feed2.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B5F24CC645700AA6F58 /* feed2.json */; };
-		B5393B6224CC6D6800AA6F58 /* gifhome_640x1345_14s.gif in Resources */ = {isa = PBXBuildFile; fileRef = B5393B6124CC6D6800AA6F58 /* gifhome_640x1345_14s.gif */; };
-		B5393B6424CC6E5C00AA6F58 /* gifhome_640x1345_11s.gif in Resources */ = {isa = PBXBuildFile; fileRef = B5393B6324CC6E5C00AA6F58 /* gifhome_640x1345_11s.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,8 +105,6 @@
 		B5393B5924CC63BE00AA6F58 /* feed4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed4.json; sourceTree = "<group>"; };
 		B5393B5B24CC63E900AA6F58 /* feed5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed5.json; sourceTree = "<group>"; };
 		B5393B5F24CC645700AA6F58 /* feed2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed2.json; sourceTree = "<group>"; };
-		B5393B6124CC6D6800AA6F58 /* gifhome_640x1345_14s.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifhome_640x1345_14s.gif; sourceTree = "<group>"; };
-		B5393B6324CC6E5C00AA6F58 /* gifhome_640x1345_11s.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifhome_640x1345_11s.gif; sourceTree = "<group>"; };
 		BC4D0EC9A93225D3FDC4CF62 /* Pods-DouYinSwift5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYinSwift5.debug.xcconfig"; path = "Target Support Files/Pods-DouYinSwift5/Pods-DouYinSwift5.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,8 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				B53641BA24C93CA5001869FC /* README.md */,
-				B5393B6324CC6E5C00AA6F58 /* gifhome_640x1345_11s.gif */,
-				B5393B6124CC6D6800AA6F58 /* gifhome_640x1345_14s.gif */,
 				B536419124C92B34001869FC /* DouYinSwift5 */,
 				B536419024C92B34001869FC /* Products */,
 				105E6848D974829334F53E78 /* Pods */,
@@ -370,8 +364,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5393B6224CC6D6800AA6F58 /* gifhome_640x1345_14s.gif in Resources */,
-				B5393B6424CC6E5C00AA6F58 /* gifhome_640x1345_11s.gif in Resources */,
 				B5393B5624CC5E3F00AA6F58 /* feed1.json in Resources */,
 				B5393B5824CC634C00AA6F58 /* feed3.json in Resources */,
 				B536420924CA9C30001869FC /* UserFavoriteList.json in Resources */,
