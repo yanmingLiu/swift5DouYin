@@ -14,7 +14,7 @@ class VideoListViewModel {
     var list = [VideoCellViewModel]()
     
     public func loadData(page: Int = 1, success: @escaping ()->Void) {
-        let path = "Feed\(page).json"
+        let path = "feed\(page).json"
         guard let filePath = Bundle.main.path(forResource: path, ofType: nil) else {
             return
         }
