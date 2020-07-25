@@ -14,7 +14,7 @@ class VideoListViewModel {
     var list = [VideoCellViewModel]()
     
     public func loadData(page: Int = 1, success: @escaping ()->Void) {
-        let path = "feed\(page).json"
+        let path = "Feed\(page).json"
         guard let filePath = Bundle.main.path(forResource: path, ofType: nil) else {
             return
         }
@@ -30,7 +30,7 @@ class VideoListViewModel {
             }
             success()
         } catch  {
-            debugPrint("获取tabbar.json异常")
+            debugPrint("获取.json异常")
         }
     }
 }

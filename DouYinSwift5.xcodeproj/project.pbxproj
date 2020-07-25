@@ -42,17 +42,13 @@
 		B53641F624CA8E58001869FC /* VideoFeedCellMusicAlbumNameBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53641F524CA8E57001869FC /* VideoFeedCellMusicAlbumNameBtn.swift */; };
 		B53641F824CA94EA001869FC /* ZLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53641F724CA94EA001869FC /* ZLabel.swift */; };
 		B53641FA24CA9885001869FC /* VideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53641F924CA9885001869FC /* VideoListViewModel.swift */; };
-		B536420324CA9C30001869FC /* UserFavoritesList.json in Resources */ = {isa = PBXBuildFile; fileRef = B53641FC24CA9C30001869FC /* UserFavoritesList.json */; };
-		B536420424CA9C30001869FC /* UserMusicList.json in Resources */ = {isa = PBXBuildFile; fileRef = B53641FD24CA9C30001869FC /* UserMusicList.json */; };
-		B536420524CA9C30001869FC /* UserVideoList.json in Resources */ = {isa = PBXBuildFile; fileRef = B53641FE24CA9C30001869FC /* UserVideoList.json */; };
-		B536420624CA9C30001869FC /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = B53641FF24CA9C30001869FC /* User.json */; };
-		B536420724CA9C30001869FC /* UserTimeline.json in Resources */ = {isa = PBXBuildFile; fileRef = B536420024CA9C30001869FC /* UserTimeline.json */; };
-		B536420924CA9C30001869FC /* UserFavoriteList.json in Resources */ = {isa = PBXBuildFile; fileRef = B536420224CA9C30001869FC /* UserFavoriteList.json */; };
-		B5393B5624CC5E3F00AA6F58 /* feed1.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B5524CC5E3E00AA6F58 /* feed1.json */; };
-		B5393B5824CC634C00AA6F58 /* feed3.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B5724CC634C00AA6F58 /* feed3.json */; };
-		B5393B5A24CC63BE00AA6F58 /* feed4.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B5924CC63BE00AA6F58 /* feed4.json */; };
-		B5393B5C24CC63E900AA6F58 /* feed5.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B5B24CC63E900AA6F58 /* feed5.json */; };
-		B5393B6024CC645700AA6F58 /* feed2.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B5F24CC645700AA6F58 /* feed2.json */; };
+		B5393B7124CC791600AA6F58 /* UserFavoritesList.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B6A24CC791600AA6F58 /* UserFavoritesList.json */; };
+		B5393B7224CC791600AA6F58 /* UserMusicList.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B6B24CC791600AA6F58 /* UserMusicList.json */; };
+		B5393B7324CC791600AA6F58 /* UserVideoList.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B6C24CC791600AA6F58 /* UserVideoList.json */; };
+		B5393B7424CC791600AA6F58 /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B6D24CC791600AA6F58 /* User.json */; };
+		B5393B7524CC791600AA6F58 /* UserTimeline.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B6E24CC791600AA6F58 /* UserTimeline.json */; };
+		B5393B7624CC791600AA6F58 /* Feed1.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B6F24CC791600AA6F58 /* Feed1.json */; };
+		B5393B7724CC791600AA6F58 /* UserFavoriteList.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B7024CC791600AA6F58 /* UserFavoriteList.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,17 +90,13 @@
 		B53641F524CA8E57001869FC /* VideoFeedCellMusicAlbumNameBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedCellMusicAlbumNameBtn.swift; sourceTree = "<group>"; };
 		B53641F724CA94EA001869FC /* ZLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLabel.swift; sourceTree = "<group>"; };
 		B53641F924CA9885001869FC /* VideoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewModel.swift; sourceTree = "<group>"; };
-		B53641FC24CA9C30001869FC /* UserFavoritesList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserFavoritesList.json; sourceTree = "<group>"; };
-		B53641FD24CA9C30001869FC /* UserMusicList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserMusicList.json; sourceTree = "<group>"; };
-		B53641FE24CA9C30001869FC /* UserVideoList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserVideoList.json; sourceTree = "<group>"; };
-		B53641FF24CA9C30001869FC /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
-		B536420024CA9C30001869FC /* UserTimeline.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserTimeline.json; sourceTree = "<group>"; };
-		B536420224CA9C30001869FC /* UserFavoriteList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserFavoriteList.json; sourceTree = "<group>"; };
-		B5393B5524CC5E3E00AA6F58 /* feed1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed1.json; sourceTree = "<group>"; };
-		B5393B5724CC634C00AA6F58 /* feed3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed3.json; sourceTree = "<group>"; };
-		B5393B5924CC63BE00AA6F58 /* feed4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed4.json; sourceTree = "<group>"; };
-		B5393B5B24CC63E900AA6F58 /* feed5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed5.json; sourceTree = "<group>"; };
-		B5393B5F24CC645700AA6F58 /* feed2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = feed2.json; sourceTree = "<group>"; };
+		B5393B6A24CC791600AA6F58 /* UserFavoritesList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserFavoritesList.json; sourceTree = "<group>"; };
+		B5393B6B24CC791600AA6F58 /* UserMusicList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserMusicList.json; sourceTree = "<group>"; };
+		B5393B6C24CC791600AA6F58 /* UserVideoList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserVideoList.json; sourceTree = "<group>"; };
+		B5393B6D24CC791600AA6F58 /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
+		B5393B6E24CC791600AA6F58 /* UserTimeline.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserTimeline.json; sourceTree = "<group>"; };
+		B5393B6F24CC791600AA6F58 /* Feed1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Feed1.json; sourceTree = "<group>"; };
+		B5393B7024CC791600AA6F58 /* UserFavoriteList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserFavoriteList.json; sourceTree = "<group>"; };
 		BC4D0EC9A93225D3FDC4CF62 /* Pods-DouYinSwift5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYinSwift5.debug.xcconfig"; path = "Target Support Files/Pods-DouYinSwift5/Pods-DouYinSwift5.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +143,7 @@
 		B536419124C92B34001869FC /* DouYinSwift5 */ = {
 			isa = PBXGroup;
 			children = (
+				B5393B6924CC791600AA6F58 /* Data */,
 				B53641F324CA889A001869FC /* LottieResources */,
 				B53641C924C9692A001869FC /* Helpers */,
 				B53641AD24C92DE1001869FC /* Consts */,
@@ -166,7 +159,6 @@
 		B53641A624C92BE0001869FC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				B53641FB24CA9C30001869FC /* Data */,
 				B53641DE24C9A284001869FC /* Models */,
 				B53641D824C9A0A8001869FC /* ViewModels */,
 				B53641D524C9A01E001869FC /* Manager */,
@@ -278,20 +270,16 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		B53641FB24CA9C30001869FC /* Data */ = {
+		B5393B6924CC791600AA6F58 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				B53641FC24CA9C30001869FC /* UserFavoritesList.json */,
-				B53641FD24CA9C30001869FC /* UserMusicList.json */,
-				B53641FE24CA9C30001869FC /* UserVideoList.json */,
-				B53641FF24CA9C30001869FC /* User.json */,
-				B536420024CA9C30001869FC /* UserTimeline.json */,
-				B536420224CA9C30001869FC /* UserFavoriteList.json */,
-				B5393B5524CC5E3E00AA6F58 /* feed1.json */,
-				B5393B5724CC634C00AA6F58 /* feed3.json */,
-				B5393B5924CC63BE00AA6F58 /* feed4.json */,
-				B5393B5B24CC63E900AA6F58 /* feed5.json */,
-				B5393B5F24CC645700AA6F58 /* feed2.json */,
+				B5393B6A24CC791600AA6F58 /* UserFavoritesList.json */,
+				B5393B6B24CC791600AA6F58 /* UserMusicList.json */,
+				B5393B6C24CC791600AA6F58 /* UserVideoList.json */,
+				B5393B6D24CC791600AA6F58 /* User.json */,
+				B5393B6E24CC791600AA6F58 /* UserTimeline.json */,
+				B5393B6F24CC791600AA6F58 /* Feed1.json */,
+				B5393B7024CC791600AA6F58 /* UserFavoriteList.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -364,18 +352,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5393B5624CC5E3F00AA6F58 /* feed1.json in Resources */,
-				B5393B5824CC634C00AA6F58 /* feed3.json in Resources */,
-				B536420924CA9C30001869FC /* UserFavoriteList.json in Resources */,
-				B5393B5C24CC63E900AA6F58 /* feed5.json in Resources */,
-				B536420624CA9C30001869FC /* User.json in Resources */,
+				B5393B7724CC791600AA6F58 /* UserFavoriteList.json in Resources */,
+				B5393B7424CC791600AA6F58 /* User.json in Resources */,
+				B5393B7624CC791600AA6F58 /* Feed1.json in Resources */,
 				B53641BB24C93CA5001869FC /* README.md in Resources */,
-				B5393B5A24CC63BE00AA6F58 /* feed4.json in Resources */,
-				B536420324CA9C30001869FC /* UserFavoritesList.json in Resources */,
-				B5393B6024CC645700AA6F58 /* feed2.json in Resources */,
-				B536420724CA9C30001869FC /* UserTimeline.json in Resources */,
-				B536420524CA9C30001869FC /* UserVideoList.json in Resources */,
-				B536420424CA9C30001869FC /* UserMusicList.json in Resources */,
+				B5393B7124CC791600AA6F58 /* UserFavoritesList.json in Resources */,
+				B5393B7524CC791600AA6F58 /* UserTimeline.json in Resources */,
+				B5393B7324CC791600AA6F58 /* UserVideoList.json in Resources */,
+				B5393B7224CC791600AA6F58 /* UserMusicList.json in Resources */,
 				B536419F24C92B39001869FC /* LaunchScreen.storyboard in Resources */,
 				B536419C24C92B39001869FC /* Assets.xcassets in Resources */,
 				B53641F424CA889A001869FC /* LottieResources in Resources */,
