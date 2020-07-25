@@ -1,0 +1,40 @@
+PODS:
+  - Alamofire (5.2.1)
+  - HandyJSON (5.0.2)
+  - Kingfisher (5.14.1):
+    - Kingfisher/Core (= 5.14.1)
+  - Kingfisher/Core (5.14.1)
+  - LookinServer (1.0.0)
+  - lottie-ios (3.1.8)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+
+DEPENDENCIES:
+  - HandyJSON
+  - Kingfisher
+  - LookinServer
+  - lottie-ios
+  - Moya
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - HandyJSON
+    - Kingfisher
+    - LookinServer
+    - lottie-ios
+    - Moya
+
+SPEC CHECKSUMS:
+  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+
+PODFILE CHECKSUM: 5410b47862c3d6aaaaf10e216f94227eaf2e244e
+
+COCOAPODS: 1.9.3
