@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 extension UIColor {
-
     /// 随机颜色
     class var random: UIColor {
         get {

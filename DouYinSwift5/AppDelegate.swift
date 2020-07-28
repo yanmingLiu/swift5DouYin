@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = TabBarController()
         PlayerManager.configAudioSession()
+        
         window.makeKeyAndVisible()
         self.window = window
         return true

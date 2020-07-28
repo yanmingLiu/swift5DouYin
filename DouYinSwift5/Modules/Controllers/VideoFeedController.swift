@@ -26,9 +26,8 @@ class VideoFeedController: BaseViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         palyCurrentRow()
     }
     
@@ -39,7 +38,6 @@ class VideoFeedController: BaseViewController {
     }
     
     private func setupUI(){
-        
         tableView = UITableView(frame: .zero, style: .plain)
         tableView.backgroundColor = .clear
         tableView.delegate = self

@@ -23,8 +23,8 @@ struct Music: HandyJSON {
     var ownerId: String?
     var ownerNickname: String?
     var isOriginal: Bool?
-    var userCount: Int?
-    var duration: Int?
+    var userCount: Int = 0
+    var duration: Int = 0
     
     mutating func mapping(mapper: HelpingMapper) {
         mapper <<<

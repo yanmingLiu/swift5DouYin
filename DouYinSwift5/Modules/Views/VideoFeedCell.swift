@@ -234,6 +234,7 @@ extension VideoFeedCell {
     func addAvatar() {
         avatar = UIImageView()
         avatar.clipsToBounds = true
+        avatar.isUserInteractionEnabled = true
         avatar.layer.cornerRadius = 25
         avatar.layer.borderColor = UIColor.white.cgColor
         avatar.borderWidth = 1
@@ -243,6 +244,9 @@ extension VideoFeedCell {
         avatar.centerXAnchor.constraint(equalTo: musicDiscBtn.centerXAnchor).isActive = true
         avatar.widthAnchor.constraint(equalToConstant: 50).isActive = true
         avatar.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(avatarAction))
+        avatar.addGestureRecognizer(tap)
     }
     
     /// 关注按钮
@@ -354,6 +358,11 @@ extension VideoFeedCell {
         
     }
     
+    @objc func avatarAction() {
+        let vc = UserPageViewController()
+        self.viewController()?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 // MARK: - ZLabelDelegate
@@ -371,7 +380,7 @@ extension VideoFeedCell: ZLabelDelegate {
 // MARK: - PlayerViewDelegate
 extension VideoFeedCell: PlayerViewDelegate {
     func onItemCurrentTimeChange(current: Float64, duration: Float64) {
-        print(" current = \(current), duration = \(duration)")
+        //        print(" current = \(current), duration = \(duration)")
         let progress = Float(current / duration)
         progressView.setProgress(progress, animated: true)
     }

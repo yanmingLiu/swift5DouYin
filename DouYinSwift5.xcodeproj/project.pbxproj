@@ -49,6 +49,18 @@
 		B5393B7524CC791600AA6F58 /* UserTimeline.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B6E24CC791600AA6F58 /* UserTimeline.json */; };
 		B5393B7624CC791600AA6F58 /* Feed1.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B6F24CC791600AA6F58 /* Feed1.json */; };
 		B5393B7724CC791600AA6F58 /* UserFavoriteList.json in Resources */ = {isa = PBXBuildFile; fileRef = B5393B7024CC791600AA6F58 /* UserFavoriteList.json */; };
+		B5393B7924CFED9300AA6F58 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5393B7824CFED9300AA6F58 /* UserPageViewController.swift */; };
+		B5393B7B24CFF1EB00AA6F58 /* PageContainScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5393B7A24CFF1EB00AA6F58 /* PageContainScrollView.swift */; };
+		B5393B7F24CFF51500AA6F58 /* PageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5393B7E24CFF51500AA6F58 /* PageHeaderView.swift */; };
+		B5393B8124CFF55F00AA6F58 /* PageSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5393B8024CFF55F00AA6F58 /* PageSegmentView.swift */; };
+		B5393B8324CFF72A00AA6F58 /* MusicListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5393B8224CFF72A00AA6F58 /* MusicListController.swift */; };
+		B5393B8524CFF7C500AA6F58 /* VideoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5393B8424CFF7C400AA6F58 /* VideoListController.swift */; };
+		B5393B8724D00EB600AA6F58 /* UserFollowRecommendBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5393B8624D00EB600AA6F58 /* UserFollowRecommendBtn.swift */; };
+		B5393B8924D00F6E00AA6F58 /* UserFollowBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5393B8824D00F6E00AA6F58 /* UserFollowBtn.swift */; };
+		B5393B8D24D01D7900AA6F58 /* MusicViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5393B8C24D01D7900AA6F58 /* MusicViewCell.swift */; };
+		B5393B8F24D01E5C00AA6F58 /* MusicListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5393B8E24D01E5C00AA6F58 /* MusicListViewModel.swift */; };
+		B5393B9124D01E8A00AA6F58 /* MusicCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5393B9024D01E8A00AA6F58 /* MusicCellViewModel.swift */; };
+		B5393B9324D02F3200AA6F58 /* VideoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5393B9224D02F3200AA6F58 /* VideoViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +109,18 @@
 		B5393B6E24CC791600AA6F58 /* UserTimeline.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserTimeline.json; sourceTree = "<group>"; };
 		B5393B6F24CC791600AA6F58 /* Feed1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Feed1.json; sourceTree = "<group>"; };
 		B5393B7024CC791600AA6F58 /* UserFavoriteList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserFavoriteList.json; sourceTree = "<group>"; };
+		B5393B7824CFED9300AA6F58 /* UserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
+		B5393B7A24CFF1EB00AA6F58 /* PageContainScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContainScrollView.swift; sourceTree = "<group>"; };
+		B5393B7E24CFF51500AA6F58 /* PageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHeaderView.swift; sourceTree = "<group>"; };
+		B5393B8024CFF55F00AA6F58 /* PageSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSegmentView.swift; sourceTree = "<group>"; };
+		B5393B8224CFF72A00AA6F58 /* MusicListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListController.swift; sourceTree = "<group>"; };
+		B5393B8424CFF7C400AA6F58 /* VideoListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListController.swift; sourceTree = "<group>"; };
+		B5393B8624D00EB600AA6F58 /* UserFollowRecommendBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFollowRecommendBtn.swift; sourceTree = "<group>"; };
+		B5393B8824D00F6E00AA6F58 /* UserFollowBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFollowBtn.swift; sourceTree = "<group>"; };
+		B5393B8C24D01D7900AA6F58 /* MusicViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewCell.swift; sourceTree = "<group>"; };
+		B5393B8E24D01E5C00AA6F58 /* MusicListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListViewModel.swift; sourceTree = "<group>"; };
+		B5393B9024D01E8A00AA6F58 /* MusicCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCellViewModel.swift; sourceTree = "<group>"; };
+		B5393B9224D02F3200AA6F58 /* VideoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewCell.swift; sourceTree = "<group>"; };
 		BC4D0EC9A93225D3FDC4CF62 /* Pods-DouYinSwift5.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYinSwift5.debug.xcconfig"; path = "Target Support Files/Pods-DouYinSwift5/Pods-DouYinSwift5.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,7 +217,10 @@
 			isa = PBXGroup;
 			children = (
 				B53641BD24C947F0001869FC /* VideoFeedController.swift */,
+				B5393B7824CFED9300AA6F58 /* UserPageViewController.swift */,
+				B5393B8224CFF72A00AA6F58 /* MusicListController.swift */,
 				B53641BF24C94803001869FC /* TimeLineController.swift */,
+				B5393B8424CFF7C400AA6F58 /* VideoListController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -235,6 +262,13 @@
 				B53641ED24C9A69D001869FC /* VideoFeedCellMusicBtn.swift */,
 				B53641F124CA7C62001869FC /* VideoFeedCellBtn.swift */,
 				B53641F524CA8E57001869FC /* VideoFeedCellMusicAlbumNameBtn.swift */,
+				B5393B7A24CFF1EB00AA6F58 /* PageContainScrollView.swift */,
+				B5393B8024CFF55F00AA6F58 /* PageSegmentView.swift */,
+				B5393B7E24CFF51500AA6F58 /* PageHeaderView.swift */,
+				B5393B8624D00EB600AA6F58 /* UserFollowRecommendBtn.swift */,
+				B5393B8824D00F6E00AA6F58 /* UserFollowBtn.swift */,
+				B5393B8C24D01D7900AA6F58 /* MusicViewCell.swift */,
+				B5393B9224D02F3200AA6F58 /* VideoViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +286,8 @@
 			children = (
 				B53641F924CA9885001869FC /* VideoListViewModel.swift */,
 				B53641D924C9A0B6001869FC /* VideoCellViewModel.swift */,
+				B5393B8E24D01E5C00AA6F58 /* MusicListViewModel.swift */,
+				B5393B9024D01E8A00AA6F58 /* MusicCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -415,18 +451,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5393B8724D00EB600AA6F58 /* UserFollowRecommendBtn.swift in Sources */,
 				B53641C824C96616001869FC /* PaddingLabel.swift in Sources */,
 				B53641A924C92C40001869FC /* TabBarController.swift in Sources */,
 				B53641F824CA94EA001869FC /* ZLabel.swift in Sources */,
+				B5393B8F24D01E5C00AA6F58 /* MusicListViewModel.swift in Sources */,
 				B53641D424C99EC1001869FC /* PlayerView.swift in Sources */,
 				B53641B324C93124001869FC /* Consts.swift in Sources */,
 				B53641C224C94868001869FC /* Bundle+Ext.swift in Sources */,
+				B5393B8324CFF72A00AA6F58 /* MusicListController.swift in Sources */,
+				B5393B7F24CFF51500AA6F58 /* PageHeaderView.swift in Sources */,
 				B53641CD24C96A9A001869FC /* BaseViewController.swift in Sources */,
+				B5393B7924CFED9300AA6F58 /* UserPageViewController.swift in Sources */,
 				B53641E824C9A284001869FC /* TimeLine.swift in Sources */,
+				B5393B7B24CFF1EB00AA6F58 /* PageContainScrollView.swift in Sources */,
+				B5393B9124D01E8A00AA6F58 /* MusicCellViewModel.swift in Sources */,
 				B53641EA24C9A284001869FC /* Resource.swift in Sources */,
 				B53641E724C9A284001869FC /* Music.swift in Sources */,
 				B53641E624C9A284001869FC /* Statistics.swift in Sources */,
 				B53641E924C9A284001869FC /* User.swift in Sources */,
+				B5393B8124CFF55F00AA6F58 /* PageSegmentView.swift in Sources */,
 				B53641D724C9A02A001869FC /* PlayerManager.swift in Sources */,
 				B53641EB24C9A284001869FC /* Video.swift in Sources */,
 				B53641AB24C92C54001869FC /* NavigationController.swift in Sources */,
@@ -437,10 +481,14 @@
 				B53641FA24CA9885001869FC /* VideoListViewModel.swift in Sources */,
 				B53641BE24C947F0001869FC /* VideoFeedController.swift in Sources */,
 				B53641DA24C9A0B6001869FC /* VideoCellViewModel.swift in Sources */,
+				B5393B9324D02F3200AA6F58 /* VideoViewCell.swift in Sources */,
+				B5393B8924D00F6E00AA6F58 /* UserFollowBtn.swift in Sources */,
+				B5393B8D24D01D7900AA6F58 /* MusicViewCell.swift in Sources */,
 				B53641C424C94930001869FC /* UIView+Ext.swift in Sources */,
 				B53641B924C93984001869FC /* String+Ext.swift in Sources */,
 				B53641C024C94803001869FC /* TimeLineController.swift in Sources */,
 				B53641F624CA8E58001869FC /* VideoFeedCellMusicAlbumNameBtn.swift in Sources */,
+				B5393B8524CFF7C500AA6F58 /* VideoListController.swift in Sources */,
 				B53641D224C9794B001869FC /* VideoFeedCell.swift in Sources */,
 				B536419324C92B34001869FC /* AppDelegate.swift in Sources */,
 				B53641EE24C9A69D001869FC /* VideoFeedCellMusicBtn.swift in Sources */,
