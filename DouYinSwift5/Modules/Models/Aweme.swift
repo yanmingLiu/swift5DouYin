@@ -38,5 +38,8 @@ struct Aweme: HandyJSON {
         
         mapper <<<
             self.isAds <-- "is_ads"
+        
+        mapper <<<
+            self.labelTop <-- "label_top"
     }
 }

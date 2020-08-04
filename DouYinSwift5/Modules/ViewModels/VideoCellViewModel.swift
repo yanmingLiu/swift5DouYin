@@ -73,6 +73,7 @@ class VideoCellViewModel {
     
     public var dynamicCover: URL? {
         guard let urlStr = aweme.video?.dynamicCover?.urlList?.first else { return nil }
+        print(urlStr)
         return URL(string: urlStr) ?? nil
     }
     

@@ -37,15 +37,16 @@ class VideoListController: BaseViewController {
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(VideoViewCell.self, forCellWithReuseIdentifier: VideoListCellId)
         view.addSubview(collectionView)
+        
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(VideoViewCell.self, forCellWithReuseIdentifier: VideoListCellId)
         
         if #available(iOS 11.0, *) {
             collectionView.contentInsetAdjustmentBehavior = .never
@@ -53,10 +54,9 @@ class VideoListController: BaseViewController {
             automaticallyAdjustsScrollViewInsets = false
         }
         
-        viewModel.loadData {
+        viewModel.loadUserVideosData() {
             self.collectionView.reloadData()
         }
-        
     }
 }
 
@@ -98,7 +98,7 @@ extension VideoListController: UIScrollViewDelegate {
 
 extension VideoListController: PageContainScrollView {
     func scrollView() -> UIScrollView {
-        return UIScrollView()
+        return collectionView
     }
     
     func scrollViewDidScroll(callBack: @escaping (UIScrollView) -> ()) {

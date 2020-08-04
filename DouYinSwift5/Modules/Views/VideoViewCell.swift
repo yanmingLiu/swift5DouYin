@@ -26,8 +26,8 @@ class VideoViewCell: UICollectionViewCell {
     }
     
     public func bind(viewModel: VideoCellViewModel) {        
-        coverImage.kf.setImage(with: viewModel.dynamicCover)
-        topIcon.isHidden = viewModel.isTop
+        coverImage.kf.setImage(with: URL(string: "https://pb3.pstatp.com/origin/pgc-image/91f2035964cb473b8429298d0ef90246")!)
+        topIcon.isHidden = !viewModel.isTop
         topIcon.kf.setImage(with: viewModel.topIcon)
         countLable.text = viewModel.diggCount
     }
@@ -37,6 +37,7 @@ class VideoViewCell: UICollectionViewCell {
         coverImage.contentMode = .scaleAspectFill
         coverImage.clipsToBounds = true
         contentView.addSubview(coverImage)
+        
         coverImage.translatesAutoresizingMaskIntoConstraints = false
         coverImage.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
         coverImage.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
