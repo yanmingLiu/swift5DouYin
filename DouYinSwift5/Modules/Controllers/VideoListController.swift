@@ -78,7 +78,7 @@ extension VideoListController: UICollectionViewDelegateFlowLayout {
 
 extension VideoListController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0 //viewModel.list.count
+        return viewModel.list.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
