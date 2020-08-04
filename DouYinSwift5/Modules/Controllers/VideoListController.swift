@@ -37,6 +37,8 @@ class VideoListController: BaseViewController {
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
+        collectionView.alwaysBounceVertical = true
+
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(VideoViewCell.self, forCellWithReuseIdentifier: VideoListCellId)
@@ -76,7 +78,7 @@ extension VideoListController: UICollectionViewDelegateFlowLayout {
 
 extension VideoListController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.list.count
+        return 0 //viewModel.list.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
