@@ -9,19 +9,18 @@
 import UIKit
 
 class UserFollowBtn: UIControl {
-
     private var icon: UIImageView!
     private var label: UILabel!
-    
+
     init() {
         super.init(frame: CGRect.zero)
         setUpUI()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setUpUI() {
 //        backgroundColor = UIColor("393B44")
         backgroundColor = UIColor.hexString("FE2C55")
@@ -48,15 +47,15 @@ class UserFollowBtn: UIControl {
         super.touchesBegan(touches, with: event)
         alpha = 0.7
     }
-    
+
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         alpha = 1
-        
+
         guard let touch = touches.first else { return }
         let point = touch.location(in: self)
         guard bounds.contains(point) else { return }
-        
+
         isSelected = !isSelected
         if isSelected {
             backgroundColor = UIColor.hexString("393B44")

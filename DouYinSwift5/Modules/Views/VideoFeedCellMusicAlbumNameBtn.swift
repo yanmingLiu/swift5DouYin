@@ -9,7 +9,6 @@
 import UIKit
 
 class VideoFeedCellMusicAlbumNameBtn: UIControl {
-
     private var textLayer: CATextLayer!
     private var maskLayer: CAGradientLayer!
     private var textWidth: CGFloat = 0
@@ -17,25 +16,25 @@ class VideoFeedCellMusicAlbumNameBtn: UIControl {
     private let kSeparateText: String = "   "
     private let kSeparateTextWidth: CGFloat
     private var textLayerFrame = CGRect.zero
-    
+
     public var text: String = "" {
         didSet {
             calculateFrameAndUpdateUI()
         }
     }
-    
+
     public var font: UIFont = .systemFont(ofSize: 15) {
         didSet {
             calculateFrameAndUpdateUI()
         }
     }
-    
+
     public var textColor: UIColor = .white {
         didSet {
             textLayer.foregroundColor = textColor.cgColor
         }
     }
-    
+
     private func calculateFrameAndUpdateUI() {
         let size = text.singleLineSize(font: font)
         textWidth = size.width
@@ -43,17 +42,17 @@ class VideoFeedCellMusicAlbumNameBtn: UIControl {
         textLayerFrame = CGRect(x: 0, y: 0, width: textWidth * 3 + kSeparateTextWidth * 2, height: textHeight)
         drawText()
     }
-    
+
     required init() {
         kSeparateTextWidth = kSeparateText.width(for: font)
         super.init(frame: CGRect.zero)
         setUpUI()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setUpUI() {
         textLayer = CATextLayer()
         textLayer.alignmentMode = .natural
@@ -61,7 +60,7 @@ class VideoFeedCellMusicAlbumNameBtn: UIControl {
         textLayer.truncationMode = .none
         textLayer.contentsScale = UIScreen.main.scale
         layer.addSublayer(textLayer)
-        
+
         maskLayer = CAGradientLayer()
         maskLayer.startPoint = CGPoint(x: 0, y: 0)
         maskLayer.endPoint = CGPoint(x: 1, y: 0)
@@ -69,7 +68,7 @@ class VideoFeedCellMusicAlbumNameBtn: UIControl {
         maskLayer.locations = [0.0, 0.05, 0.95, 1]
         layer.mask = maskLayer
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         CATransaction.begin()
@@ -78,14 +77,14 @@ class VideoFeedCellMusicAlbumNameBtn: UIControl {
         maskLayer.frame = bounds
         CATransaction.commit()
     }
-    
+
     private func drawText() {
         textLayer.foregroundColor = textColor.cgColor
         textLayer.font = CGFont(font.fontName as CFString)
         textLayer.fontSize = font.pointSize
         textLayer.string = "\(text)\(kSeparateText)\(text)\(kSeparateText)\(text)"
     }
-    
+
     public func setUpAnimation() {
         if let _ = textLayer.animation(forKey: "scrollAnimation") {
             textLayer.removeAnimation(forKey: "scrollAnimation")
@@ -100,13 +99,12 @@ class VideoFeedCellMusicAlbumNameBtn: UIControl {
         scrollAnimation.timingFunction = CAMediaTimingFunction(name: .linear)
         textLayer.add(scrollAnimation, forKey: "scrollAnimation")
     }
-    
+
     public func pauseAnimation() {
         textLayer.pauseAnimation()
     }
-    
+
     public func resumeAnimation() {
         textLayer.resumeAnimation()
     }
 }
-
