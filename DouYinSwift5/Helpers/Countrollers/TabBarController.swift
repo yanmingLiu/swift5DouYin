@@ -45,6 +45,7 @@ class TabBarController: UITabBarController {
         
         customTabBar.tabItems = childItem
         setValue(customTabBar, forKey: "tabBar")
+        
 
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
             self.customTabBar.setCount(count: 18, index: 3)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		002214A7CC187A74F409A05C /* Pods_DouYinSwift5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19463ABBD09E8235664EF815 /* Pods_DouYinSwift5.framework */; };
+		38F6B1D6259DAE8A00C9A531 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F6B1D5259DAE8A00C9A531 /* Tools.swift */; };
 		B536419324C92B34001869FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536419224C92B34001869FC /* AppDelegate.swift */; };
 		B536419C24C92B39001869FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B536419B24C92B39001869FC /* Assets.xcassets */; };
 		B536419F24C92B39001869FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B536419D24C92B39001869FC /* LaunchScreen.storyboard */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		19463ABBD09E8235664EF815 /* Pods_DouYinSwift5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouYinSwift5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38F6B1D5259DAE8A00C9A531 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		7453130D6578AEF0A9A5FA12 /* Pods-DouYinSwift5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYinSwift5.release.xcconfig"; path = "Target Support Files/Pods-DouYinSwift5/Pods-DouYinSwift5.release.xcconfig"; sourceTree = "<group>"; };
 		B536418F24C92B34001869FC /* DouYinSwift5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYinSwift5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B536419224C92B34001869FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,14 @@
 				7453130D6578AEF0A9A5FA12 /* Pods-DouYinSwift5.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		38F6B1D4259DAE7E00C9A531 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				38F6B1D5259DAE8A00C9A531 /* Tools.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		B536418624C92B34001869FC = {
@@ -228,6 +238,7 @@
 		B53641C924C9692A001869FC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				38F6B1D4259DAE7E00C9A531 /* Tools */,
 				B53641CB24C96A71001869FC /* Countrollers */,
 				B53641CA24C96955001869FC /* Views */,
 				B53641AC24C92DA1001869FC /* Extensions */,
@@ -491,6 +502,7 @@
 				B5393B8524CFF7C500AA6F58 /* VideoListController.swift in Sources */,
 				B53641D224C9794B001869FC /* VideoFeedCell.swift in Sources */,
 				B536419324C92B34001869FC /* AppDelegate.swift in Sources */,
+				38F6B1D6259DAE8A00C9A531 /* Tools.swift in Sources */,
 				B53641EE24C9A69D001869FC /* VideoFeedCellMusicBtn.swift in Sources */,
 				B53641EC24C9A284001869FC /* Aweme.swift in Sources */,
 			);

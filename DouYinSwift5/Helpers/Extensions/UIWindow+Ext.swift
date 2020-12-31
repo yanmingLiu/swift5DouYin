@@ -16,4 +16,51 @@ extension UIWindow {
             return UIApplication.shared.keyWindow
         }
     }
+    
+    static var statusBarFrame: CGRect {
+        if #available(iOS 13.0, *) {
+            return key?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero
+        } else {
+            return UIApplication.shared.statusBarFrame
+        }
+    }
+    
+    static var statusBarHeight: CGFloat {
+        return statusBarFrame.size.height
+    }
+    
+    static var navigationBar: CGFloat {
+        return UINavigationBar.appearance().frame.size.height
+    }
+    
+    static var safeAreaInsets: UIEdgeInsets {
+        return key?.safeAreaInsets ?? UIEdgeInsets.zero
+    }
+}
+
+
+extension UIScreen {
+    static var width: CGFloat {
+        return UIScreen.main.bounds.size.width
+    }
+    
+    static var height: CGFloat {
+        return UIScreen.main.bounds.size.height
+    }
+}
+
+
+extension UIDevice {
+    static var isIphoneX: Bool  {
+        if UIDevice.current.userInterfaceIdiom != .phone {
+            return true
+        }
+        if #available(iOS 11.0, *) {
+            let bootom = UIWindow.safeAreaInsets.bottom
+            if bootom > 0.0 {
+                return true
+            }
+        }
+        return false
+    }
 }

@@ -17,10 +17,12 @@ extension UIColor {
         }
     }
 
-    /// 根据16进制颜色值返回颜色 alpha 默认1
-    /// - Parameter hexString: 颜色值字符串: 前缀 ‘#’ 和 ‘0x’ 不是必须的
-    /// - Returns: UIColor?
-    static func hexString(_ hexString: String) -> UIColor? {
+    /// 根据16进制颜色值返回颜色
+    /// - Parameters:
+    ///   - hexString: 颜色值字符串: 前缀 ‘#’ 和 ‘0x’ 不是必须的
+    ///   - alpha: 透明度，默认为1
+    /// - Returns: UIColor
+    static func hexString(_ hexString: String, alpha: CGFloat = 1) -> UIColor {
         var str = ""
         if hexString.lowercased().hasPrefix("0x") {
             str = hexString.replacingOccurrences(of: "0x", with: "")
@@ -33,7 +35,7 @@ extension UIColor {
         let length = str.count
         // 如果不是 RGB RGBA RRGGBB RRGGBBAA 结构
         if length != 3 && length != 4 && length != 6 && length != 8 {
-            return nil
+            return .clear
         }
         
         // 将 RGB RGBA 转换为 RRGGBB RRGGBBAA 结构
@@ -43,9 +45,8 @@ extension UIColor {
             str = tStr
         }
         
-        guard let hexValue = Int(str, radix: 16) else { return nil }
+        guard let hexValue = Int(str, radix: 16) else { return .clear }
         
-        var alpha = 255
         var red = 0
         var green = 0
         var blue = 0
@@ -58,10 +59,8 @@ extension UIColor {
             red = (hexValue >> 20) & 0xff
             green = (hexValue >> 16) & 0xff
             blue = (hexValue >> 8) & 0xff
-            alpha = hexValue & 0xff
         }
         return UIColor(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha))
     }
-
 }
 
