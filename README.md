@@ -2,6 +2,7 @@
 
 swift5仿写抖音，考虑使用到rx、moya、handJson搭建mvvm，但是资源都是本地的json文件，加上已经有大神开源了非常优秀的抖音仿写项目些，本工程也copy不少了其他项目的代码，只是纯学习用途，无其它商业用途。
 
+[moya + handJson 网络请求的demo在这里](https://github.com/yanmingLiu/MoyaHandyJSONNetworking)
 
 ### swift版本：
 Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
