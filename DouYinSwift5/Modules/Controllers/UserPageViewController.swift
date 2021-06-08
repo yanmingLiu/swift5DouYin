@@ -20,11 +20,12 @@ class UserPageViewController: BaseViewController {
     private var navigationView: UIView!
     
     private var navigationViewHeight: CGFloat {
-        if #available(iOS 11.0, *) {
-            return UIApplication.shared.statusBarFrame.height + 54
-        } else {
-            return 74
-        }
+//        if #available(iOS 11.0, *) {
+//            return UIApplication.shared.statusBarFrame.height + 54
+//        } else {
+//            return 74
+//        }
+        return UIWindow.statusBarHeight + 54
     }
 
     private var headerViewHeight: CGFloat {

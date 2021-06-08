@@ -56,8 +56,8 @@ extension UIDevice {
             return true
         }
         if #available(iOS 11.0, *) {
-            let bootom = UIWindow.safeAreaInsets.bottom
-            if bootom > 0.0 {
+            let bottom = UIWindow.safeAreaInsets.bottom
+            if bottom > 0.0 {
                 return true
             }
         }
