@@ -1,4 +1,4 @@
-#  Swift5 模仿抖音
+#  Swift5 模仿抖音 ![](https://img.shields.io/badge/swift-5.0-green) ![](https://img.shields.io/badge/license-MIT-blue) ![](https://img.shields.io/badge/Platforms-iOS-brightgreen)
 
 swift5仿写抖音，考虑使用到rx、moya、handJson搭建mvvm，但是资源都是本地的json文件，加上已经有大神开源了非常优秀的抖音仿写项目些，本工程也copy不少了其他项目的代码，只是纯学习用途，无其它商业用途。
 
