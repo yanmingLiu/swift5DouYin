@@ -87,13 +87,16 @@ class VideoFeedCell: UITableViewCell {
     }
 
     public func play() {
-        playerView.play()
+        if isReadyToPlay {
+            playerView.play()
+        }
     }
 
     // 播放/暂停 按钮动画
     private func playImageAnimation(status: PlayerStatus) {
         switch status {
         case .pause:
+            isReadyToPlay = false
             playImage.isHidden = false
             playImage.alpha = 0
             playImage.transform = CGAffineTransform(scaleX: 1.8, y: 1.8)
@@ -104,6 +107,7 @@ class VideoFeedCell: UITableViewCell {
             musicDiscBtn.pauseAnimation()
             musicName.pauseAnimation()
         case .playing:
+            isReadyToPlay = true
             UIView.animate(withDuration: 0.15, animations: {
                 self.playImage.alpha = 0
             }, completion: { _ in
@@ -112,6 +116,7 @@ class VideoFeedCell: UITableViewCell {
             musicDiscBtn.resumeAnimtion()
             musicName.resumeAnimation()
         case .none:
+            isReadyToPlay = false
             playImage.isHidden = true
         }
     }
