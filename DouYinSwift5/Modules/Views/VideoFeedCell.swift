@@ -6,14 +6,13 @@
 //  Copyright © 2020 lym. All rights reserved.
 //
 
-import UIKit
 import AVFoundation
+import Kingfisher
 import Lottie
 import MediaPlayer
-import Kingfisher
+import UIKit
 
 class VideoFeedCell: UITableViewCell {
-    
     private var playImage: UIImageView!
     private var playerView: PlayerView!
     private var musicDiscBtn: VideoFeedCellMusicBtn!
@@ -28,38 +27,41 @@ class VideoFeedCell: UITableViewCell {
     private var videoDesc: ZLabel!
     private var authorName: ZLabel!
     private var progressView: UIProgressView!
-    
-    private var viewModel:VideoCellViewModel?
+
+    private var viewModel: VideoCellViewModel?
     private(set) var isReadyToPlay: Bool = false
+
     public var startPlayOnReady: (() -> Void)?
-    
+
+    public var onDidSelectCommentButton: ((_ cell: VideoFeedCell, _ viewModel: VideoCellViewModel) -> Void)?
+
     private let avatarImage = UIImage(named: "img_find_default")
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUpUI()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
-        
+
         progressView.progress = 0
         addFollowBtn()
         musicDiscBtn.resetAnimation()
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
     }
-    
+
     public func bind(viewModel: VideoCellViewModel) {
         self.viewModel = viewModel
-        self.playerView.viewModel = viewModel
-        self.playerView.assetUrl = viewModel.playUrl
+        playerView.viewModel = viewModel
+        playerView.assetUrl = viewModel.playUrl
         playImageAnimation(status: viewModel.status)
         viewModel.status = .none
         likeCount.text = viewModel.diggCount
@@ -70,31 +72,31 @@ class VideoFeedCell: UITableViewCell {
         musicName.text = viewModel.musicName
         videoDesc.text = viewModel.videoDesc
         authorName.text = viewModel.authorName
-        
+
         if viewModel.isFollowStatus {
             followBtn.animation = Animation.named("", subdirectory: "")
         } else {
             followBtn.animation = Animation.named("home_follow_add", subdirectory: "LottieResources")
         }
-        
+
         if viewModel.isLikedStatus {
-            self.likeBtn.animation = Animation.named("icon_home_dislike_new", subdirectory: "LottieResources")
+            likeBtn.animation = Animation.named("icon_home_dislike_new", subdirectory: "LottieResources")
         } else {
-            self.likeBtn.animation = Animation.named("icon_home_like_new", subdirectory: "LottieResources")
+            likeBtn.animation = Animation.named("icon_home_like_new", subdirectory: "LottieResources")
         }
     }
-    
+
     public func play() {
         playerView.play()
     }
-    
+
     // 播放/暂停 按钮动画
     private func playImageAnimation(status: PlayerStatus) {
         switch status {
         case .pause:
-            self.playImage.isHidden = false
-            self.playImage.alpha = 0
-            self.playImage.transform = CGAffineTransform(scaleX: 1.8, y: 1.8)
+            playImage.isHidden = false
+            playImage.alpha = 0
+            playImage.transform = CGAffineTransform(scaleX: 1.8, y: 1.8)
             UIView.animate(withDuration: 0.15, animations: {
                 self.playImage.alpha = 1
                 self.playImage.transform = CGAffineTransform(scaleX: 1, y: 1)
@@ -110,7 +112,7 @@ class VideoFeedCell: UITableViewCell {
             musicDiscBtn.resumeAnimtion()
             musicName.resumeAnimation()
         case .none:
-            self.playImage.isHidden = true
+            playImage.isHidden = true
         }
     }
 }
@@ -118,12 +120,11 @@ class VideoFeedCell: UITableViewCell {
 // MARK: - UI
 
 extension VideoFeedCell {
-    
     func setUpUI() {
-        self.selectionStyle = .none
-        self.backgroundColor = .clear
+        selectionStyle = .none
+        backgroundColor = .clear
         contentView.backgroundColor = .clear
-        
+
         addBackgroundImage()
         addPlayerView()
         addPlayImage()
@@ -138,7 +139,7 @@ extension VideoFeedCell {
         addAuthorName()
         addVolumeProgressView()
     }
-    
+
     /// 背景图片
     func addBackgroundImage() {
         let backgroundImage = UIImageView()
@@ -151,7 +152,7 @@ extension VideoFeedCell {
         backgroundImage.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         backgroundImage.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
     }
-    
+
     /// 暂停图片
     func addPlayImage() {
         playImage = UIImageView()
@@ -161,7 +162,7 @@ extension VideoFeedCell {
         playImage.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 0).isActive = true
         playImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0).isActive = true
     }
-    
+
     /// 播放view
     func addPlayerView() {
         playerView = PlayerView()
@@ -173,7 +174,7 @@ extension VideoFeedCell {
         playerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0).isActive = true
         playerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
     }
-    
+
     /// 音乐按钮
     func addMusicDisc() {
         musicDiscBtn = VideoFeedCellMusicBtn()
@@ -182,7 +183,7 @@ extension VideoFeedCell {
         musicDiscBtn.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -15).isActive = true
         musicDiscBtn.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -10).isActive = true
     }
-    
+
     /// 分享按钮
     func addShareBtn() {
         shareBtn = VideoFeedCellBtn()
@@ -193,7 +194,7 @@ extension VideoFeedCell {
         shareBtn.centerXAnchor.constraint(equalTo: musicDiscBtn.centerXAnchor).isActive = true
         shareBtn.bottomAnchor.constraint(equalTo: musicDiscBtn.topAnchor, constant: -40).isActive = true
     }
-    
+
     /// 评论按钮
     func addCommentBtn() {
         commentBtn = VideoFeedCellBtn()
@@ -204,15 +205,16 @@ extension VideoFeedCell {
         commentBtn.centerXAnchor.constraint(equalTo: musicDiscBtn.centerXAnchor).isActive = true
         commentBtn.bottomAnchor.constraint(equalTo: shareBtn.topAnchor, constant: -10).isActive = true
     }
-    
+
     /// 喜欢按钮
     func addLikeBtn() {
         likeCount = UILabel()
         likeCount.text = "0"
         likeCount.font = .systemFont(ofSize: 12)
         likeCount.textColor = UIColor.white
-        
+
         likeBtn = AnimationView()
+        likeBtn.clipsToBounds = true
         let imageProvider = BundleImageProvider(bundle: Bundle.main, searchPath: "LottieResources")
         likeBtn.imageProvider = imageProvider
         contentView.addSubview(likeBtn)
@@ -225,11 +227,11 @@ extension VideoFeedCell {
         likeBtn.heightAnchor.constraint(equalToConstant: 55).isActive = true
         likeCount.topAnchor.constraint(equalTo: likeBtn.bottomAnchor).isActive = true
         likeCount.centerXAnchor.constraint(equalTo: likeBtn.centerXAnchor).isActive = true
-        
+
         let tap = UITapGestureRecognizer(target: self, action: #selector(likeAction))
         likeBtn.addGestureRecognizer(tap)
     }
-    
+
     /// 头像按钮
     func addAvatar() {
         avatar = UIImageView()
@@ -244,11 +246,11 @@ extension VideoFeedCell {
         avatar.centerXAnchor.constraint(equalTo: musicDiscBtn.centerXAnchor).isActive = true
         avatar.widthAnchor.constraint(equalToConstant: 50).isActive = true
         avatar.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
+
         let tap = UITapGestureRecognizer(target: self, action: #selector(avatarAction))
         avatar.addGestureRecognizer(tap)
     }
-    
+
     /// 关注按钮
     func addFollowBtn() {
         if followBtn != nil, followBtn.superview != nil { return }
@@ -260,11 +262,11 @@ extension VideoFeedCell {
         followBtn.centerYAnchor.constraint(equalTo: avatar.bottomAnchor).isActive = true
         followBtn.widthAnchor.constraint(equalToConstant: 34).isActive = true
         followBtn.heightAnchor.constraint(equalToConstant: 34).isActive = true
-        
+
         let tap = UITapGestureRecognizer(target: self, action: #selector(followAction))
         followBtn.addGestureRecognizer(tap)
     }
-    
+
     /// 音乐icon 名字
     func addMusicName() {
         musicIcon = UIImageView()
@@ -282,7 +284,7 @@ extension VideoFeedCell {
         musicName.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.6).isActive = true
         musicName.heightAnchor.constraint(equalToConstant: 20).isActive = true
     }
-    
+
     /// 视频简介
     func addVideoDesc() {
         videoDesc = ZLabel(frame: CGRect.zero)
@@ -296,7 +298,7 @@ extension VideoFeedCell {
         videoDesc.bottomAnchor.constraint(equalTo: musicIcon.topAnchor, constant: -8).isActive = true
         videoDesc.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.67).isActive = true
     }
-    
+
     /// 作者
     func addAuthorName() {
         authorName = ZLabel(frame: CGRect.zero)
@@ -311,7 +313,7 @@ extension VideoFeedCell {
         authorName.bottomAnchor.constraint(equalTo: videoDesc.topAnchor, constant: -8).isActive = true
         authorName.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.5).isActive = true
     }
-    
+
     /// 进度条
     func addVolumeProgressView() {
         progressView = UIProgressView(progressViewStyle: .default)
@@ -325,12 +327,11 @@ extension VideoFeedCell {
         progressView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
         progressView.heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
-    
-    
+
     @objc func likeAction() {
-        self.likeBtn.play(completion: { [weak self] (finished) in
+        likeBtn.play(completion: { [weak self] _ in
             self!.viewModel!.isLikedStatus = !self!.viewModel!.isLikedStatus
-            
+
             if self!.viewModel!.isLikedStatus {
                 self!.likeBtn.animation = Animation.named("icon_home_dislike_new", subdirectory: "LottieResources")
             } else {
@@ -338,13 +339,12 @@ extension VideoFeedCell {
             }
         })
     }
-    
+
     @objc func shareAction() {
-        
     }
-    
+
     @objc func followAction() {
-        followBtn.play(completion: { [weak self](finished) in
+        followBtn.play(completion: { [weak self] _ in
             UIView.animate(withDuration: 0.3, delay: 0.1, animations: {
                 self?.followBtn.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
             }, completion: { _ in
@@ -353,38 +353,37 @@ extension VideoFeedCell {
             })
         })
     }
-    
+
     @objc func commentAction() {
-        
+        onDidSelectCommentButton?(self, viewModel!)
     }
-    
+
     @objc func avatarAction() {
         let vc = UserPageViewController()
-        self.viewController()?.navigationController?.pushViewController(vc, animated: true)
+        viewController()?.navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
 // MARK: - ZLabelDelegate
+
 extension VideoFeedCell: ZLabelDelegate {
     func labelDidSelectedLinkText(label: ZLabel, text: String) {
         let vc = UIAlertController(title: "点击了文本", message: text, preferredStyle: .alert)
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         vc.addAction(cancel)
-        self.viewController()?.present(vc, animated: true, completion: nil)
+        viewController()?.present(vc, animated: true, completion: nil)
     }
 }
 
-
-
 // MARK: - PlayerViewDelegate
+
 extension VideoFeedCell: PlayerViewDelegate {
     func onItemCurrentTimeChange(current: Float64, duration: Float64) {
         //        print(" current = \(current), duration = \(duration)")
         let progress = Float(current / duration)
         progressView.setProgress(progress, animated: true)
     }
-    
+
     func onItemStatusChange(status: AVPlayerItem.Status) {
         switch status {
         case .readyToPlay:
@@ -396,9 +395,8 @@ extension VideoFeedCell: PlayerViewDelegate {
             break
         }
     }
-    
+
     func onPlayerStatusChange(status: PlayerStatus) {
         playImageAnimation(status: viewModel!.status)
     }
 }
-

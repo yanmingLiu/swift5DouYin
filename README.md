@@ -4,6 +4,9 @@ swift5仿写抖音，考虑使用到rx、moya、handJson搭建mvvm，但是资�
 
 [moya + handJson 网络请求的demo在这里](https://github.com/yanmingLiu/MoyaHandyJSONNetworking)
 
+评论列表实现：
+CommentListViewController 为评论弹层, 直接将CommentListViewController.view 添加到 VideoFeedController.view
+
 ### swift版本：
 Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
 Target: x86_64-apple-darwin19.6.0

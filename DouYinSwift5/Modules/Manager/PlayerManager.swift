@@ -40,7 +40,7 @@ class PlayerManager {
         player.pause()
     }
     
-    public func pasueAll() {
+    public func pauseAll() {
         playerDic.values.forEach { $0.pause() }
     }
     

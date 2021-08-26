@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		002214A7CC187A74F409A05C /* Pods_DouYinSwift5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19463ABBD09E8235664EF815 /* Pods_DouYinSwift5.framework */; };
 		3889E522266F98D600382DF7 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3889E521266F98D600382DF7 /* UITableView+Ext.swift */; };
+		38992AB526D767A000AD5094 /* CommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38992AB426D767A000AD5094 /* CommentListViewController.swift */; };
+		38992AB726D76CB200AD5094 /* CommentListViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38992AB626D76CB200AD5094 /* CommentListViewHeaderView.swift */; };
+		38992B3D26D780EB00AD5094 /* CommentListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38992B3C26D780EB00AD5094 /* CommentListTableView.swift */; };
 		38F6B1D6259DAE8A00C9A531 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F6B1D5259DAE8A00C9A531 /* Tools.swift */; };
 		B536419324C92B34001869FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536419224C92B34001869FC /* AppDelegate.swift */; };
 		B536419C24C92B39001869FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B536419B24C92B39001869FC /* Assets.xcassets */; };
@@ -68,6 +71,9 @@
 /* Begin PBXFileReference section */
 		19463ABBD09E8235664EF815 /* Pods_DouYinSwift5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouYinSwift5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3889E521266F98D600382DF7 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
+		38992AB426D767A000AD5094 /* CommentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListViewController.swift; sourceTree = "<group>"; };
+		38992AB626D76CB200AD5094 /* CommentListViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListViewHeaderView.swift; sourceTree = "<group>"; };
+		38992B3C26D780EB00AD5094 /* CommentListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListTableView.swift; sourceTree = "<group>"; };
 		38F6B1D5259DAE8A00C9A531 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		7453130D6578AEF0A9A5FA12 /* Pods-DouYinSwift5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYinSwift5.release.xcconfig"; path = "Target Support Files/Pods-DouYinSwift5/Pods-DouYinSwift5.release.xcconfig"; sourceTree = "<group>"; };
 		B536418F24C92B34001869FC /* DouYinSwift5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYinSwift5.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +240,7 @@
 				B5393B8224CFF72A00AA6F58 /* MusicListController.swift */,
 				B53641BF24C94803001869FC /* TimeLineController.swift */,
 				B5393B8424CFF7C400AA6F58 /* VideoListController.swift */,
+				38992AB426D767A000AD5094 /* CommentListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -283,6 +290,8 @@
 				B5393B8824D00F6E00AA6F58 /* UserFollowBtn.swift */,
 				B5393B8C24D01D7900AA6F58 /* MusicViewCell.swift */,
 				B5393B9224D02F3200AA6F58 /* VideoViewCell.swift */,
+				38992AB626D76CB200AD5094 /* CommentListViewHeaderView.swift */,
+				38992B3C26D780EB00AD5094 /* CommentListTableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -465,6 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38992B3D26D780EB00AD5094 /* CommentListTableView.swift in Sources */,
 				B5393B8724D00EB600AA6F58 /* UserFollowRecommendBtn.swift in Sources */,
 				B53641C824C96616001869FC /* PaddingLabel.swift in Sources */,
 				B53641A924C92C40001869FC /* TabBarController.swift in Sources */,
@@ -477,6 +487,7 @@
 				B5393B7F24CFF51500AA6F58 /* PageHeaderView.swift in Sources */,
 				B53641CD24C96A9A001869FC /* BaseViewController.swift in Sources */,
 				B5393B7924CFED9300AA6F58 /* UserPageViewController.swift in Sources */,
+				38992AB726D76CB200AD5094 /* CommentListViewHeaderView.swift in Sources */,
 				B53641E824C9A284001869FC /* TimeLine.swift in Sources */,
 				B5393B7B24CFF1EB00AA6F58 /* PageContainScrollView.swift in Sources */,
 				B5393B9124D01E8A00AA6F58 /* MusicCellViewModel.swift in Sources */,
@@ -502,6 +513,7 @@
 				B53641C424C94930001869FC /* UIView+Ext.swift in Sources */,
 				B53641B924C93984001869FC /* String+Ext.swift in Sources */,
 				B53641C024C94803001869FC /* TimeLineController.swift in Sources */,
+				38992AB526D767A000AD5094 /* CommentListViewController.swift in Sources */,
 				B53641F624CA8E58001869FC /* VideoFeedCellMusicAlbumNameBtn.swift in Sources */,
 				B5393B8524CFF7C500AA6F58 /* VideoListController.swift in Sources */,
 				B53641D224C9794B001869FC /* VideoFeedCell.swift in Sources */,

@@ -15,10 +15,12 @@ class VideoFeedCellBtn: UIControl {
     
     required init() {
         imageView = UIImageView()
+        
         label = UILabel()
         label.text = "0"
         label.font = .systemFont(ofSize: 12)
         super.init(frame: CGRect.zero)
+        
         setUpUI()
     }
     
@@ -30,25 +32,33 @@ class VideoFeedCellBtn: UIControl {
         label.textColor = UIColor.white
         self.addSubview(label)
         self.addSubview(imageView)
-        label.translatesAutoresizingMaskIntoConstraints = false
+        
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         imageView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.topAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
         label.centerXAnchor.constraint(equalTo: imageView.centerXAnchor).isActive = true
         label.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
         imageViewScaleAnimation(isPressed: true)
     }
-    
+
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+
         imageViewScaleAnimation(isPressed: false)
     }
-    
+
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+
         imageViewScaleAnimation(isPressed: false)
     }
     

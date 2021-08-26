@@ -131,7 +131,7 @@ class PlayerView: UIView {
     }
     
     public func pause() {
-        PlayerManager.shared.pasueAll()
+        PlayerManager.shared.pauseAll()
     }
     
     
