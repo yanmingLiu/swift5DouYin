@@ -50,10 +50,7 @@ class CommentListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        tableView.isPagingEnabled = true
         tableView.rowHeight = 50
-        tableView.showsVerticalScrollIndicator = false
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: UIWindow.safeAreaInsets.bottom + 44, right: 0)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CommentListViewCell")
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
@@ -108,7 +105,7 @@ extension CommentListViewController {
         topMaskView.isHidden = false
         view.isHidden = false
         let transform = CGAffineTransform.identity
-        UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseOut, .allowUserInteraction], animations: {
+        UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseOut, .allowUserInteraction], animations: {
             self.containerView.transform = transform
         })
     }
@@ -116,7 +113,7 @@ extension CommentListViewController {
     @objc func hide() {
         topMaskView.isHidden = true
         let transform = CGAffineTransform(translationX: 0, y: containerView.frame.height)
-        UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseOut, .allowUserInteraction], animations: {
+        UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseOut, .allowUserInteraction], animations: {
             self.containerView.transform = transform
         }) { finished in
             if finished {
@@ -222,7 +219,7 @@ extension CommentListViewController {
             let curTransform = containerView.transform
             let transform = CGAffineTransform.identity
             // 200 这个临界值可以修改合适的值
-            if curTransform.ty >= 200 {
+            if curTransform.ty >= 100 {
                 hide()
             } else {
                 UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseOut, .allowUserInteraction], animations: {
