@@ -104,7 +104,7 @@ extension UIScrollView: UIGestureRecognizerDelegate {
         return true
     }
 
-    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith _: UIGestureRecognizer) -> Bool {
         if panBack(gestureRecognizer: gestureRecognizer) {
             return true
         }
@@ -121,7 +121,7 @@ extension UIScrollView: UIGestureRecognizerDelegate {
 
             if state == UIGestureRecognizer.State.began || state == UIGestureRecognizer.State.possible {
                 let location = gestureRecognizer.location(in: self)
-                if point.x > 0 && location.x < locationDistance && contentOffset.x <= 0 {
+                if point.x > 0, location.x < locationDistance, contentOffset.x <= 0 {
                     return true
                 }
             }

@@ -105,7 +105,7 @@ class VideoFeedController: BaseViewController {
 }
 
 extension VideoFeedController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         viewModel.list.count
     }
 
@@ -123,13 +123,13 @@ extension VideoFeedController: UITableViewDataSource {
 }
 
 extension VideoFeedController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return tableView.frame.size.height
     }
 }
 
 extension VideoFeedController: UIScrollViewDelegate {
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_: UIScrollView) {
         guard let cell = tableView.visibleCells.first, let index = tableView.indexPath(for: cell) else { return }
         guard currentRow != index.row else { return }
         currentRow = index.row

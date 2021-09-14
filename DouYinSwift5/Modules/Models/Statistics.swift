@@ -17,22 +17,21 @@ struct Statistics: HandyJSON {
     var playCount: Int!
     var shareCount: Int!
     var forwardCount: Int!
-    
+
     mutating func mapping(mapper: HelpingMapper) {
         mapper <<<
-            self.awemeId <-- "aweme_id"
+            awemeId <-- "aweme_id"
         mapper <<<
-            self.commentCount <-- "comment_count"
+            commentCount <-- "comment_count"
         mapper <<<
-            self.diggCount <-- "digg_count"
+            diggCount <-- "digg_count"
         mapper <<<
-            self.downloadCount <-- "download_count"
+            downloadCount <-- "download_count"
         mapper <<<
-            self.playCount <-- "play_count"
+            playCount <-- "play_count"
         mapper <<<
-            self.shareCount <-- "share_count"
+            shareCount <-- "share_count"
         mapper <<<
-            self.forwardCount <-- "forward_count"
+            forwardCount <-- "forward_count"
     }
-    
 }

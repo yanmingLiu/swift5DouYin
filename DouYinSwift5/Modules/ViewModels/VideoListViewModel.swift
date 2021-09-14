@@ -10,10 +10,9 @@ import Foundation
 import HandyJSON
 
 class VideoListViewModel {
-    
     var list = [VideoCellViewModel]()
-    
-    public func loadData(page: Int = 1, success: @escaping ()->Void) {
+
+    public func loadData(page: Int = 1, success: @escaping () -> Void) {
         let path = "Feed\(page).json"
         guard let filePath = Bundle.main.path(forResource: path, ofType: nil) else {
             return
@@ -25,16 +24,16 @@ class VideoListViewModel {
             let json = String(data: prettyData, encoding: .utf8) ?? String(data: data, encoding: .utf8) ?? ""
             print(json)
             let arr = [Aweme].deserialize(from: json, designatedPath: "aweme_list") as! [Aweme]
-            arr.forEach { (a) in
+            arr.forEach { a in
                 list.append(VideoCellViewModel(aweme: a))
             }
             success()
-        } catch  {
+        } catch {
             debugPrint("获取.json异常")
         }
     }
-    
-    public func loadUserVideosData(_ success: @escaping ()->Void) {
+
+    public func loadUserVideosData(_ success: @escaping () -> Void) {
         let path = "UserVideoList.json"
         guard let filePath = Bundle.main.path(forResource: path, ofType: nil) else {
             return
@@ -46,11 +45,11 @@ class VideoListViewModel {
             let json = String(data: prettyData, encoding: .utf8) ?? String(data: data, encoding: .utf8) ?? ""
             print(json)
             let arr = [Aweme].deserialize(from: json, designatedPath: "aweme_list") as! [Aweme]
-            arr.forEach { (a) in
+            arr.forEach { a in
                 list.append(VideoCellViewModel(aweme: a))
             }
             success()
-        } catch  {
+        } catch {
             debugPrint("获取.json异常")
         }
     }

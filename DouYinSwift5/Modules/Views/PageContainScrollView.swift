@@ -9,7 +9,7 @@
 import UIKit
 
 open class PageScrollView: UICollectionView {
-    public override func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    override public func gestureRecognizer(_: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         guard let view = otherGestureRecognizer.view else { return false }
         if view is UIScrollView {
             return true
@@ -19,10 +19,9 @@ open class PageScrollView: UICollectionView {
 }
 
 public protocol PageContainScrollView: UIViewController {
-
     func scrollView() -> UIScrollView
-    
-    func scrollViewDidScroll(callBack: @escaping (UIScrollView)->())
+
+    func scrollViewDidScroll(callBack: @escaping (UIScrollView) -> Void)
 }
 
 @objc public protocol CollectionViewCellContentViewDataSource: AnyObject {
@@ -34,25 +33,25 @@ public protocol PageContainScrollView: UIViewController {
 private let CellId: String = "CollectionViewCellContentViewCellId"
 
 class CollectionViewCellContentView: UIView {
-
     public weak var delegate: CollectionViewCellContentViewDataSource?
     public weak var hostScrollView: UIScrollView!
     public var startScrollOffsetX: CGFloat = 0
-    
+
     private var collectionView: UICollectionView!
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpUI()
     }
-    
-    required init?(coder aDecoder: NSCoder) {
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func switchPage(index: Int) {
         collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .left, animated: false)
     }
-    
+
     private func setUpUI() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -77,16 +76,16 @@ class CollectionViewCellContentView: UIView {
 }
 
 extension CollectionViewCellContentView: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt _: IndexPath) -> CGSize {
         return bounds.size
     }
 }
 
 extension CollectionViewCellContentView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         return delegate?.numberOfViewController() ?? 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellId, for: indexPath)
         guard let viewController = delegate?.viewController(itemAt: indexPath) else { return cell }
@@ -98,37 +97,37 @@ extension CollectionViewCellContentView: UICollectionViewDataSource {
 }
 
 extension CollectionViewCellContentView: UICollectionViewDelegate {
-    public func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+    public func collectionView(_: UICollectionView, shouldHighlightItemAt _: IndexPath) -> Bool {
         return false
     }
-    
-    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        self.hostScrollView.isScrollEnabled = true
+
+    public func scrollViewDidEndDecelerating(_: UIScrollView) {
+        hostScrollView.isScrollEnabled = true
     }
-    
-    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        self.hostScrollView.isScrollEnabled = true
+
+    public func scrollViewDidEndDragging(_: UIScrollView, willDecelerate _: Bool) {
+        hostScrollView.isScrollEnabled = true
     }
-    
-    public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        self.hostScrollView.isScrollEnabled = true
+
+    public func scrollViewDidEndScrollingAnimation(_: UIScrollView) {
+        hostScrollView.isScrollEnabled = true
     }
-    
+
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         startScrollOffsetX = scrollView.contentOffset.x
     }
-    
+
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.isTracking || scrollView.isDecelerating {
-            self.hostScrollView.isScrollEnabled = false
+            hostScrollView.isScrollEnabled = false
         }
-        
+
         var progress: CGFloat = 0
         var sourceIndex: Int = 0
         var targetIndex: Int = 0
-        
+
         let currentOffsetX = scrollView.contentOffset.x
-        
+
         if startScrollOffsetX > currentOffsetX {
             // 右
             progress = 1 - (currentOffsetX / width - floor(currentOffsetX / width))
@@ -137,7 +136,7 @@ extension CollectionViewCellContentView: UICollectionViewDelegate {
             if sourceIndex >= delegate?.numberOfViewController() ?? 1 {
                 sourceIndex = (delegate?.numberOfViewController() ?? 1) - 1
             }
-            
+
         } else {
             // 左
             progress = currentOffsetX / width - floor(currentOffsetX / width)
@@ -151,7 +150,7 @@ extension CollectionViewCellContentView: UICollectionViewDelegate {
                 targetIndex = sourceIndex
             }
         }
-        
+
         delegate?.collectionViewScroll(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
     }
 }

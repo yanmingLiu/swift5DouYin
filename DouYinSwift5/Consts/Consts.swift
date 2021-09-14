@@ -12,10 +12,9 @@ import UIKit
 // MARK: - colors
 
 let themeColor = UIColor.hexString("171823")
-let bageColor  = UIColor.hexString("F2C716")
-let bgColor    = UIColor.hexString("11121B")
+let bageColor = UIColor.hexString("F2C716")
+let bgColor = UIColor.hexString("11121B")
 let avatarBorderColor = UIColor.hexString("1D1621")
-
 
 // MARK: - fonts
 

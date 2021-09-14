@@ -9,63 +9,62 @@
 import UIKit
 
 // MARK: - TabBarController
+
 extension TabBarController: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+    func tabBarController(_: UITabBarController, didSelect _: UIViewController) {
         customTabBar.setSelected(selected: true, index: selectedIndex)
     }
 }
 
 class TabBarController: UITabBarController {
-    
     var customTabBar = TabBar()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configViewControllers()
         delegate = self
     }
-    
+
     func configViewControllers() {
         let childClassNames = [
-            ["vc": "VideoFeedController", "title": "首页", "count" : 0],
-            ["vc": "TimeLineController", "title": "关注", "count" : 0],
-            ["vc": "", "image": "btn_home_add75x49", "count" : 0],
-            ["vc": "", "title": "消息", "count" : 0],
-            ["vc": "", "title": "我", "count" : 0],
+            ["vc": "VideoFeedController", "title": "首页", "count": 0],
+            ["vc": "TimeLineController", "title": "关注", "count": 0],
+            ["vc": "", "image": "btn_home_add75x49", "count": 0],
+            ["vc": "", "title": "消息", "count": 0],
+            ["vc": "", "title": "我", "count": 0],
         ]
-        
+
         var childVCs: [UIViewController] = []
         var childItem: [TabbarItem] = []
-        childClassNames.forEach { (dict) in
+        childClassNames.forEach { dict in
             childVCs.append(buildViewController(from: dict))
             childItem.append(buildTabbarItem(from: dict))
         }
-        
+
         viewControllers = childVCs
-        
+
         customTabBar.tabItems = childItem
         setValue(customTabBar, forKey: "tabBar")
-        
 
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
             self.customTabBar.setCount(count: 18, index: 3)
         }
     }
-    
-    func buildViewController(from conf:Dictionary<String, Any>) -> UIViewController {
+
+    func buildViewController(from conf: [String: Any]) -> UIViewController {
         guard let className = conf["vc"],
-            let vcCls = NSClassFromString(Bundle.appBundleName + ".\(className)") as? UIViewController.Type
-            else {
-                let temp = BaseViewController()
-                let navVC = NavigationController(rootViewController: temp)
-                return navVC
+              let vcCls = NSClassFromString(Bundle.appBundleName + ".\(className)") as? UIViewController.Type
+        else {
+            let temp = BaseViewController()
+            let navVC = NavigationController(rootViewController: temp)
+            return navVC
         }
         let viewController = vcCls.init()
         let navVC = NavigationController(rootViewController: viewController)
         return navVC
     }
-    
-    func buildTabbarItem(from conf: Dictionary<String, Any>) -> TabbarItem {
+
+    func buildTabbarItem(from conf: [String: Any]) -> TabbarItem {
         guard let name = conf["title"] else {
             guard let image = conf["image"] else {
                 return TitleItem(title: "未知")
@@ -79,21 +78,21 @@ class TabBarController: UITabBarController {
 // MARK: - TabBar
 
 class TabBar: UITabBar {
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundImage = UIImage()
         shadowImage = UIImage()
-        
-        self.isTranslucent = false
-        self.barTintColor = themeColor
+
+        isTranslucent = false
+        barTintColor = themeColor
     }
-    
-    required init?(coder aDecoder: NSCoder) {
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    public func setSelected(selected: Bool, index: Int) {
+
+    public func setSelected(selected _: Bool, index: Int) {
         guard let items = tabItems else { return }
         for (i, item) in items.enumerated() {
             if i == index {
@@ -103,10 +102,10 @@ class TabBar: UITabBar {
             }
         }
     }
-    
+
     public func setCount(count: Int, index: Int) {
         guard let items = tabItems else { return }
-        
+
         let item = items[index]
         if item is TitleItem {
             (item as! TitleItem).count = count
@@ -119,17 +118,17 @@ class TabBar: UITabBar {
                 return
             }
             removeSubviews()
-            items.forEach{
+            items.forEach {
                 if $0 is TitleItem {
                     addSubview($0)
                 }
             }
         }
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+
         guard let items = tabItems else { return }
         let itemW = width / CGFloat(items.count)
         let itemH = height - CGFloat(UIWindow.key?.safeAreaInsets.bottom ?? 0.0)
@@ -146,7 +145,6 @@ class TabBar: UITabBar {
             }
         }
     }
-    
 }
 
 // MARK: - TabBar item
@@ -158,42 +156,43 @@ protocol TabbarItem: UIView {
 
 class AddItem: UIControl, TabbarItem {
     var image: UIImageView
-    
+
     var count: Int
     var selectedStatus: Bool = false
-    
+
     init(image: String) {
         self.image = UIImageView(image: UIImage(named: image))
-        self.count = 0
+        count = 0
         super.init(frame: CGRect.zero)
         setUpUI()
     }
-    
-    required init?(coder aDecoder: NSCoder) {
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setUpUI() {
         addSubview(image)
         image.translatesAutoresizingMaskIntoConstraints = false
         image.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         image.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
-    
+
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         UIView.animate(withDuration: 0.1) {
             self.image.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         }
         return super.beginTracking(touch, with: event)
     }
-    
+
     override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         super.endTracking(touch, with: event)
         UIView.animate(withDuration: 0.1) {
             self.image.transform = CGAffineTransform(scaleX: 1, y: 1)
         }
     }
-    
+
     override func cancelTracking(with event: UIEvent?) {
         super.cancelTracking(with: event)
         UIView.animate(withDuration: 0.1) {
@@ -207,14 +206,14 @@ class TitleItem: UIView, TabbarItem {
     var indicatorView: UIView!
     var bage: PaddingLabel!
     var title: String = ""
-    
+
     var count: Int = 0 {
         didSet {
-            bage.isHidden = self.count <= 0
+            bage.isHidden = count <= 0
             bage.text = "\(count)"
         }
     }
-    
+
     var selectedStatus: Bool = false {
         didSet {
             if selectedStatus {
@@ -226,18 +225,19 @@ class TitleItem: UIView, TabbarItem {
             }
         }
     }
-    
+
     init(title: String, count: Int = 0) {
         self.title = title
         self.count = count
         super.init(frame: CGRect.zero)
         setUpUI()
     }
-    
-    required init?(coder aDecoder: NSCoder) {
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setUpUI() {
         btn = UIButton(type: .custom)
         btn.setTitle(title, for: .normal)
@@ -251,7 +251,7 @@ class TitleItem: UIView, TabbarItem {
         btn.topAnchor.constraint(equalTo: topAnchor).isActive = true
         btn.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         btn.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        
+
         indicatorView = UIView()
         indicatorView.backgroundColor = UIColor.white
         indicatorView.layer.cornerRadius = 1
@@ -264,7 +264,7 @@ class TitleItem: UIView, TabbarItem {
         guard let title = btn.title(for: .normal) else { return }
         let titleW = title.width(for: tabBarSelectFont)
         indicatorView.widthAnchor.constraint(equalToConstant: titleW).isActive = true
-        
+
         bage = PaddingLabel(frame: .zero)
         bage.padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
         bage.isHidden = true
@@ -283,5 +283,3 @@ class TitleItem: UIView, TabbarItem {
         bage.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
     }
 }
-
-

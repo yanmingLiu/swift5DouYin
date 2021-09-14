@@ -18,13 +18,10 @@ let cachePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirect
 /// 临时目录
 let tempPath = NSTemporaryDirectory() as NSString
 
-
 /// 打印
-func dlog<T>(_ message: T, file : StaticString = #file, method: String = #function, line: Int = #line) {
+func dlog<T>(_ message: T, file: StaticString = #file, method: String = #function, line: Int = #line) {
     #if DEBUG
-    let fileName = (file.description as NSString).lastPathComponent
-    print("\n💚\(fileName)\(method)[\(line)]:\n💙 \(message)")
+        let fileName = (file.description as NSString).lastPathComponent
+        print("\n💚\(fileName)\(method)[\(line)]:\n💙 \(message)")
     #endif
 }
-
-

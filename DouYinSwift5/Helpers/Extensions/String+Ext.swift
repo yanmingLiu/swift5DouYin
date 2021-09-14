@@ -6,16 +6,15 @@
 //  Copyright © 2020 lym. All rights reserved.
 //
 
-import UIKit
 import Foundation
+import UIKit
 
 extension String {
-    
     /// 计算单行文本行高、支持包含emoji表情符的计算。开头空格、自定义插入的文本图片不纳入计算范围
     ///
     /// - Parameter font: 字体
     /// - Returns: 文字大小
-    func singleLineSize(font:UIFont) -> CGSize {
+    func singleLineSize(font: UIFont) -> CGSize {
         let cfFont = CTFontCreateWithName(font.fontName as CFString, font.pointSize, nil)
         var leading = font.lineHeight - font.ascender + font.descender
         var paragraphSettings = [
@@ -32,7 +31,7 @@ extension String {
         let framesetter = CTFramesetterCreateWithAttributedString(lstring)
         return CTFramesetterSuggestFrameSizeWithConstraints(framesetter, CFRangeMake(0, 0), nil, CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude), nil)
     }
-    
+
     /// 指定字体单行高度
     ///
     /// - Parameter font: 字体
@@ -40,7 +39,7 @@ extension String {
     func height(for font: UIFont) -> CGFloat {
         return size(for: font, size: CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude), lineBreakMode: .byWordWrapping).height
     }
-    
+
     /// 指定字体单行宽度
     ///
     /// - Parameter font: 字体
@@ -48,7 +47,7 @@ extension String {
     func width(for font: UIFont) -> CGFloat {
         return size(for: font, size: CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude), lineBreakMode: .byWordWrapping).width
     }
-    
+
     /// 计算指定字体的尺寸
     ///
     /// - Parameters:
@@ -57,7 +56,7 @@ extension String {
     ///   - lineBreakMode: 换行模式
     /// - Returns: 尺寸
     func size(for font: UIFont, size: CGSize, lineBreakMode: NSLineBreakMode) -> CGSize {
-        var attr:[NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font]
+        var attr: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font]
         if lineBreakMode != .byWordWrapping {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineBreakMode = lineBreakMode
@@ -66,7 +65,7 @@ extension String {
         let rect = (self as NSString).boundingRect(with: size, options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: attr, context: nil)
         return rect.size
     }
-    
+
     /// 正则匹配
     ///
     /// - Parameters:
@@ -77,24 +76,23 @@ extension String {
         guard let pattern = try? NSRegularExpression(pattern: regex, options: options) else { return false }
         return pattern.numberOfMatches(in: self, options: [], range: rangeOfAll) > 0
     }
-    
-    
+
     /// 枚举所有正则表达式匹配项
     ///
     /// - Parameters:
     ///   - regex: 正则表达式
     ///   - options: 匹配选项
     ///   - closure: 功能闭包
-    func enumerate(regex: String, options: NSRegularExpression.Options, closure: (_ match: String, _ matchRange: Range<String.Index>,_ stop: UnsafeMutablePointer<ObjCBool>) -> Void) {
+    func enumerate(regex: String, options: NSRegularExpression.Options, closure: (_ match: String, _ matchRange: Range<String.Index>, _ stop: UnsafeMutablePointer<ObjCBool>) -> Void) {
         guard regex.isNotBlank else { return }
         guard let pattern = try? NSRegularExpression(pattern: regex, options: options) else { return }
-        pattern.enumerateMatches(in: self, options: [], range: rangeOfAll) { (result, flags, stop) in
+        pattern.enumerateMatches(in: self, options: [], range: rangeOfAll) { result, _, stop in
             if let result = result, let range = range(for: result.range) {
                 closure(String(self[range]), range, stop)
             }
         }
     }
-    
+
     /// 正则替换
     ///
     /// - Parameters:
@@ -107,26 +105,24 @@ extension String {
         guard let pattern = try? NSRegularExpression(pattern: regex, options: options) else { return nil }
         return pattern.stringByReplacingMatches(in: self, options: [], range: rangeOfAll, withTemplate: with)
     }
-    
+
     func append(scale: CGFloat) -> String {
-        if fabsf(Float((scale - 1))) <= .ulpOfOne || !isNotBlank || hasSuffix("/") { return self }
+        if fabsf(Float(scale - 1)) <= .ulpOfOne || !isNotBlank || hasSuffix("/") { return self }
         return appendingFormat("@%dx", Int(scale))
     }
 }
-
-
 
 public extension String {
     /// 返回组成字符串的字符数组
     var charactersArray: [Character] {
         return Array(self)
     }
-    
+
     /// 去掉字符串首尾的空格换行，中间的空格和换行忽略
     var trimmed: String {
         return trimmingCharacters(in: .whitespacesAndNewlines)
     }
-    
+
     /// 是否不为空
     ///
     /// "", "  ", "\n", "  \n   "都视为空
@@ -134,12 +130,12 @@ public extension String {
     var isNotBlank: Bool {
         return !trimmed.isEmpty
     }
-    
+
     /// 字符串的全部范围
     var rangeOfAll: NSRange {
         return NSRange(location: 0, length: count)
     }
-    
+
     /// NSRange转换为当前字符串的Range
     ///
     /// - Parameter range: NSRange对象

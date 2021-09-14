@@ -16,8 +16,8 @@ class VideoFeedCell: UITableViewCell {
     private var playImage: UIImageView!
     private var playerView: PlayerView!
     private var musicDiscBtn: VideoFeedCellMusicBtn!
-    private var shareBtn: VideoFeedCellBtn!
-    private var commentBtn: VideoFeedCellBtn!
+    private var shareBtn: VideoFeedCellButton!
+    private var commentBtn: VideoFeedCellButton!
     private var likeBtn: AnimationView!
     private var likeCount: UILabel!
     private var avatar: UIImageView!
@@ -42,7 +42,8 @@ class VideoFeedCell: UITableViewCell {
         setUpUI()
     }
 
-    required init?(coder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -191,7 +192,7 @@ extension VideoFeedCell {
 
     /// 分享按钮
     func addShareBtn() {
-        shareBtn = VideoFeedCellBtn()
+        shareBtn = VideoFeedCellButton()
         shareBtn.imageView.image = UIImage(named: "icon_home_share40x40")
         shareBtn.addTarget(self, action: #selector(shareAction), for: .touchUpInside)
         contentView.addSubview(shareBtn)
@@ -202,7 +203,7 @@ extension VideoFeedCell {
 
     /// 评论按钮
     func addCommentBtn() {
-        commentBtn = VideoFeedCellBtn()
+        commentBtn = VideoFeedCellButton()
         commentBtn.imageView.image = UIImage(named: "icon_home_comment40x40")
         commentBtn.addTarget(self, action: #selector(commentAction), for: .touchUpInside)
         contentView.addSubview(commentBtn)
@@ -345,8 +346,7 @@ extension VideoFeedCell {
         })
     }
 
-    @objc func shareAction() {
-    }
+    @objc func shareAction() {}
 
     @objc func followAction() {
         followBtn.play(completion: { [weak self] _ in
@@ -372,7 +372,7 @@ extension VideoFeedCell {
 // MARK: - ZLabelDelegate
 
 extension VideoFeedCell: ZLabelDelegate {
-    func labelDidSelectedLinkText(label: ZLabel, text: String) {
+    func labelDidSelectedLinkText(label _: ZLabel, text: String) {
         let vc = UIAlertController(title: "点击了文本", message: text, preferredStyle: .alert)
         let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         vc.addAction(cancel)
@@ -401,7 +401,7 @@ extension VideoFeedCell: PlayerViewDelegate {
         }
     }
 
-    func onPlayerStatusChange(status: PlayerStatus) {
+    func onPlayerStatusChange(status _: PlayerStatus) {
         playImageAnimation(status: viewModel!.status)
     }
 }

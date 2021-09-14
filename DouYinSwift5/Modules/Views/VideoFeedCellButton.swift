@@ -8,45 +8,45 @@
 
 import UIKit
 
-class VideoFeedCellBtn: UIControl {
-
+class VideoFeedCellButton: UIControl {
     public let imageView: UIImageView
     public let label: UILabel
-    
+
     required init() {
         imageView = UIImageView()
-        
+
         label = UILabel()
         label.text = "0"
         label.font = .systemFont(ofSize: 12)
         super.init(frame: CGRect.zero)
-        
+
         setUpUI()
     }
-    
+
+    @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setUpUI() {
         label.textColor = UIColor.white
-        self.addSubview(label)
-        self.addSubview(imageView)
-        
+        addSubview(label)
+        addSubview(imageView)
+
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         imageView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        
+
         label.translatesAutoresizingMaskIntoConstraints = false
         label.topAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
         label.centerXAnchor.constraint(equalTo: imageView.centerXAnchor).isActive = true
         label.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        
+
         imageViewScaleAnimation(isPressed: true)
     }
 
@@ -61,14 +61,14 @@ class VideoFeedCellBtn: UIControl {
 
         imageViewScaleAnimation(isPressed: false)
     }
-    
+
     private func imageViewScaleAnimation(isPressed: Bool) {
-        let scale = isPressed ? CGAffineTransform(scaleX: 1.2, y: 1.2)
-                : CGAffineTransform(scaleX: 1, y: 1)
-        
+        let scale = isPressed
+            ? CGAffineTransform(scaleX: 1.2, y: 1.2)
+            : CGAffineTransform(scaleX: 1.0, y: 1.0)
+
         UIView.animate(withDuration: 0.1) {
             self.imageView.transform = scale
         }
     }
-
 }

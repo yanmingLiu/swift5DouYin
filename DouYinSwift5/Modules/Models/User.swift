@@ -25,37 +25,36 @@ struct Author: HandyJSON {
     var favoritingCount: Int?
     var totalFavorited: Int?
     var constellation: Int?
-    
+
     mutating func mapping(mapper: HelpingMapper) {
+        mapper <<<
+            nickName <-- "nickname"
 
         mapper <<<
-            self.nickName <-- "nickname"
+            avatarLarger <-- "avatar_larger"
 
         mapper <<<
-            self.avatarLarger <-- "avatar_larger"
+            avatarThumb <-- "avatar_thumb"
 
         mapper <<<
-            self.avatarThumb <-- "avatar_thumb"
+            avatarMedium <-- "avatar_medium"
 
         mapper <<<
-            self.avatarMedium <-- "avatar_medium"
+            isVerified <-- "is_verified"
 
         mapper <<<
-            self.isVerified <-- "is_verified"
+            followStatus <-- "follow_status"
 
         mapper <<<
-            self.followStatus <-- "follow_status"
+            awemeCount <-- "aweme_count"
 
         mapper <<<
-            self.awemeCount <-- "aweme_count"
+            followingCount <-- "following_count"
 
         mapper <<<
-            self.followingCount <-- "following_count"
+            favoritingCount <-- "favoriting_count"
 
         mapper <<<
-            self.favoritingCount <-- "favoriting_count"
-
-        mapper <<<
-            self.totalFavorited <-- "total_favorited"
+            totalFavorited <-- "total_favorited"
     }
 }

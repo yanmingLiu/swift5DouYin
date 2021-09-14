@@ -21,25 +21,24 @@ struct Video: HandyJSON {
     var hasWatermark: Bool?
     var playAddrLowbr: Resource?
     var duration: Int?
-    
+
     mutating func mapping(mapper: HelpingMapper) {
         mapper <<<
-            self.playAddr <-- "play_addr"
-        
-        mapper <<<
-            self.dynamicCover <-- "dynamic_cover"
-        
-        mapper <<<
-            self.originCover <-- "origin_cover"
-        
-        mapper <<<
-            self.downloadAddr <-- "download_addr"
-        
-        mapper <<<
-            self.hasWatermark <-- "has_watermark"
-        
-        mapper <<<
-            self.playAddrLowbr <-- "play_addr_lowbr"
-    }
+            playAddr <-- "play_addr"
 
+        mapper <<<
+            dynamicCover <-- "dynamic_cover"
+
+        mapper <<<
+            originCover <-- "origin_cover"
+
+        mapper <<<
+            downloadAddr <-- "download_addr"
+
+        mapper <<<
+            hasWatermark <-- "has_watermark"
+
+        mapper <<<
+            playAddrLowbr <-- "play_addr_lowbr"
+    }
 }

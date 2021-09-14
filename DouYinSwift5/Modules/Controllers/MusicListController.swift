@@ -11,21 +11,21 @@ import UIKit
 private let CellId = "cell"
 
 class MusicListController: BaseViewController {
-    fileprivate var didScroll: ((UIScrollView) -> ())?
+    fileprivate var didScroll: ((UIScrollView) -> Void)?
 
-    private var tableView: UITableView = UITableView(frame: CGRect.zero, style: .plain)
+    private var tableView = UITableView(frame: CGRect.zero, style: .plain)
     private let viewModel = MusicListViewModel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupUI()
-        
+
         viewModel.loadData {
             self.tableView.reloadData()
         }
     }
-    
+
     private func setupUI() {
         tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
@@ -39,7 +39,7 @@ class MusicListController: BaseViewController {
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.separatorStyle = .none
-        
+
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         } else {
@@ -48,19 +48,19 @@ class MusicListController: BaseViewController {
     }
 }
 
-// MARK:- UITableViewDataSource
+// MARK: - UITableViewDataSource
 
 extension MusicListController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         return 85
     }
 }
 
 extension MusicListController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return viewModel.list.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellId, for: indexPath) as! MusicViewCell
         let cellViewModel = viewModel.list[indexPath.row]
@@ -69,7 +69,8 @@ extension MusicListController: UITableViewDataSource {
     }
 }
 
-// MARK:- PageContainScrollView
+// MARK: - PageContainScrollView
+
 extension MusicListController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         didScroll?(scrollView)
@@ -80,8 +81,8 @@ extension MusicListController: PageContainScrollView {
     func scrollView() -> UIScrollView {
         return tableView
     }
-    
-    func scrollViewDidScroll(callBack: @escaping (UIScrollView) -> ()) {
+
+    func scrollViewDidScroll(callBack: @escaping (UIScrollView) -> Void) {
         didScroll = callBack
     }
 }

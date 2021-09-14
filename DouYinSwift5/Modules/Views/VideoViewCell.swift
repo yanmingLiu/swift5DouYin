@@ -11,15 +11,16 @@ import UIKit
 
 class VideoViewCell: UICollectionViewCell {
     private var coverImage: UIImageView!
-    private var countLable: UILabel!
+    private var countLabel: UILabel!
     private var topIcon: UIImageView!
 
-    override init(frame: CGRect) {
+    override init(frame _: CGRect) {
         super.init(frame: CGRect.zero)
         setUpUI()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -27,7 +28,7 @@ class VideoViewCell: UICollectionViewCell {
         coverImage.kf.setImage(with: URL(string: "https://pb3.pstatp.com/origin/pgc-image/91f2035964cb473b8429298d0ef90246")!)
         topIcon.isHidden = !viewModel.isTop
         topIcon.kf.setImage(with: viewModel.topIcon)
-        countLable.text = viewModel.diggCount
+        countLabel.text = viewModel.diggCount
     }
 
     func setUpUI() {
@@ -48,13 +49,13 @@ class VideoViewCell: UICollectionViewCell {
         likeIcon.leftAnchor.constraint(equalTo: leftAnchor, constant: 8).isActive = true
         likeIcon.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
 
-        countLable = UILabel()
-        countLable.font = .boldSystemFont(ofSize: 11)
-        countLable.textColor = UIColor.white
-        addSubview(countLable)
-        countLable.translatesAutoresizingMaskIntoConstraints = false
-        countLable.leftAnchor.constraint(equalTo: likeIcon.rightAnchor, constant: 5).isActive = true
-        countLable.centerYAnchor.constraint(equalTo: likeIcon.centerYAnchor).isActive = true
+        countLabel = UILabel()
+        countLabel.font = .boldSystemFont(ofSize: 11)
+        countLabel.textColor = UIColor.white
+        addSubview(countLabel)
+        countLabel.translatesAutoresizingMaskIntoConstraints = false
+        countLabel.leftAnchor.constraint(equalTo: likeIcon.rightAnchor, constant: 5).isActive = true
+        countLabel.centerYAnchor.constraint(equalTo: likeIcon.centerYAnchor).isActive = true
 
         topIcon = UIImageView()
         topIcon.isHidden = true

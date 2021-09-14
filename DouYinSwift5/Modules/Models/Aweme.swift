@@ -11,8 +11,8 @@ import HandyJSON
 
 struct Aweme: HandyJSON {
     var awemeId: String?
-    var desc:String?
-    var createTime:Date?
+    var desc: String?
+    var createTime: Date?
     var author: Author?
     var music: Music?
     var video: Video?
@@ -23,23 +23,23 @@ struct Aweme: HandyJSON {
     var labelTop: Resource?
     var isAds: Bool?
     var duration: Int?
-    
+
     mutating func mapping(mapper: HelpingMapper) {
         mapper.specify(property: &awemeId, name: "aweme_id")
-        
+
         mapper <<<
-            self.createTime <-- "create_time"
-        
+            createTime <-- "create_time"
+
         mapper <<<
-            self.authorUserId <-- "author_user_id"
-        
+            authorUserId <-- "author_user_id"
+
         mapper <<<
-            self.isTop <-- "is_top"
-        
+            isTop <-- "is_top"
+
         mapper <<<
-            self.isAds <-- "is_ads"
-        
+            isAds <-- "is_ads"
+
         mapper <<<
-            self.labelTop <-- "label_top"
+            labelTop <-- "label_top"
     }
 }

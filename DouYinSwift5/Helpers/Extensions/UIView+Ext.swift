@@ -6,11 +6,10 @@
 //  Copyright © 2020 lym. All rights reserved.
 //
 
-
 import UIKit
 
-
 // MARK: - 属性
+
 extension UIView {
     /// 边框颜色
     @IBInspectable var borderColor: UIColor? {
@@ -26,20 +25,19 @@ extension UIView {
             layer.borderColor = color.cgColor
         }
     }
-    
+
     /// 边框宽度
     @IBInspectable var borderWidth: CGFloat {
         get { return layer.borderWidth }
         set { layer.borderWidth = newValue }
     }
-    
+
     /// 圆角半径 cornerRadius只是对view的背景颜色和边框起作用；没有设置masksToBounds不会造成离屏渲染
     var cornerRadius: CGFloat {
         get { return layer.cornerRadius }
         set { layer.cornerRadius = newValue }
     }
-    
-    
+
     /// 返回视图快照
     @objc var snapshotImage: UIImage? {
         UIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque, 0)
@@ -48,72 +46,71 @@ extension UIView {
         layer.render(in: context)
         return UIGraphicsGetImageFromCurrentImageContext()
     }
-    
+
     var size: CGSize {
         get { return frame.size }
         set { width = newValue.width; height = newValue.height }
     }
-    
+
     var width: CGFloat {
         get { return frame.size.width }
         set { return frame.size.width = newValue }
     }
-    
+
     var height: CGFloat {
         get { return frame.size.height }
         set { return frame.size.height = newValue }
     }
-    
+
     var x: CGFloat {
         get { return frame.origin.x }
         set { frame.origin.x = newValue }
     }
-    
+
     var y: CGFloat {
         get { return frame.origin.y }
         set { frame.origin.y = newValue }
     }
-    
+
     var left: CGFloat {
         get { return x }
         set { x = newValue }
     }
-    
+
     var top: CGFloat {
         get { return y }
         set { y = newValue }
     }
-    
+
     var right: CGFloat {
         get { return x + width }
         set { x = newValue - width }
     }
-    
+
     var bottom: CGFloat {
         get { return y + height }
         set { y = newValue - height }
     }
-    
+
     var centerX: CGFloat {
         get { return center.x }
         set { center.x = newValue }
     }
-    
+
     var centerY: CGFloat {
         get { return center.y }
         set { center.y = newValue }
     }
-    
+
     var origin: CGPoint {
         get { return frame.origin }
         set { frame.origin = newValue }
     }
 }
 
-
 // MARK: - 方法
+
 public extension UIView {
-    
     /// 高性能的异步绘制圆角方法
     ///
     /// 原理是创建一个空白的图片，然后替换当前视图layer的contents
@@ -129,12 +126,11 @@ public extension UIView {
     ///   - borderColor: 边框颜色
     ///   - bgColor: 背景颜色0
     func setupCorner(radius: CGFloat, corners: UIRectCorner = [.allCorners], borderWidth: CGFloat? = nil, borderColor: UIColor? = nil, bgColor: UIColor = .clear) {
-        
-        let size = self.bounds.size
+        let size = bounds.size
 
         let halfBorderWidth = borderWidth ?? 0 / 2.0
-        let width = self.bounds.size.width
-        let height = self.bounds.size.height
+        let width = bounds.size.width
+        let height = bounds.size.height
 
         DispatchQueue.global().async {
             UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
@@ -149,7 +145,7 @@ public extension UIView {
                 context.setStrokeColor(UIColor.clear.cgColor)
             }
             context.setFillColor(bgColor.cgColor)
-                        
+
             context.move(to: CGPoint(x: width - halfBorderWidth, y: radius + halfBorderWidth))
             if corners.contains(.bottomRight) || corners.contains(.allCorners) {
                 // 右下角角度
@@ -158,33 +154,33 @@ public extension UIView {
             } else {
                 context.addLine(to: CGPoint(x: width - halfBorderWidth, y: height - halfBorderWidth))
             }
-            
+
             if corners.contains(.bottomLeft) || corners.contains(.allCorners) {
-                //左下角角度
+                // 左下角角度
                 context.addArc(tangent1End: CGPoint(x: halfBorderWidth, y: height - halfBorderWidth),
                                tangent2End: CGPoint(x: halfBorderWidth, y: height - radius - halfBorderWidth), radius: radius)
             } else {
                 context.addLine(to: CGPoint(x: halfBorderWidth, y: height - halfBorderWidth))
             }
-            
+
             if corners.contains(.topLeft) || corners.contains(.allCorners) {
-                //左上角角度
+                // 左上角角度
                 context.addArc(tangent1End: CGPoint(x: halfBorderWidth, y: halfBorderWidth),
                                tangent2End: CGPoint(x: width - halfBorderWidth, y: halfBorderWidth), radius: radius)
             } else {
-                context.addLine(to: CGPoint(x: halfBorderWidth, y: halfBorderWidth ))
+                context.addLine(to: CGPoint(x: halfBorderWidth, y: halfBorderWidth))
             }
-            
+
             if corners.contains(.topRight) || corners.contains(.allCorners) {
-                //右上角角度
+                // 右上角角度
                 context.addArc(tangent1End: CGPoint(x: width - halfBorderWidth, y: halfBorderWidth),
                                tangent2End: CGPoint(x: width - halfBorderWidth, y: radius + halfBorderWidth), radius: radius)
             } else {
                 context.addLine(to: CGPoint(x: width - halfBorderWidth, y: halfBorderWidth))
             }
-            
+
             context.drawPath(using: .fillStroke)
-            
+
             if let img = UIGraphicsGetImageFromCurrentImageContext() {
                 DispatchQueue.main.async {
                     self.layer.contents = img.cgImage
@@ -192,13 +188,12 @@ public extension UIView {
             }
         }
     }
-    
+
     /// 删除所有的子视图
     func removeSubviews() {
-        subviews.forEach{ $0.removeFromSuperview() }
+        subviews.forEach { $0.removeFromSuperview() }
     }
-    
-    
+
     /// 返回视图中的第一响应者View
     ///
     /// - Returns: 第一响应者的View，可能为空
@@ -206,8 +201,7 @@ public extension UIView {
         let keyWindow = UIWindow.key
         return keyWindow?.firstResponder()
     }
-    
-    
+
     /// 返回视图的控制器对象
     ///
     /// - Returns: 控制器对象，可能为空
@@ -221,11 +215,10 @@ public extension UIView {
             }
             view = view?.superview
         } while view != nil
-        
+
         return nil
     }
-    
-    
+
     /// 返回视图上叠加的alpha值
     ///
     /// - Returns: alhpa值
@@ -235,7 +228,7 @@ public extension UIView {
             return alpha
         }
         if window == nil { return 0 }
-        var alpha:CGFloat = 1
+        var alpha: CGFloat = 1
         var v: UIView? = self
         while v != nil {
             let view = v!
@@ -245,9 +238,7 @@ public extension UIView {
         }
         return alpha
     }
-    
-    
-    
+
     /// 将当前坐标系的点转换到另一个视图或窗口的坐标系
     ///
     /// 当参数view为nil的时候，系统会自动帮你转换为当前窗口的基本坐标系（即view参数为整个屏幕，原点为(0,0)，宽高是屏幕的宽高）
@@ -282,7 +273,8 @@ public extension UIView {
             }
         }
         if let from = isKind(of: UIWindow.self) ? (self as! UIWindow) : window,
-            let to = view.isKind(of: UIWindow.self) ? (view as! UIWindow) : view.window, from != to {
+           let to = view.isKind(of: UIWindow.self) ? (view as! UIWindow) : view.window, from != to
+        {
             var p = point
             p = convert(p, to: from)
             p = to.convert(p, to: from)
@@ -292,8 +284,7 @@ public extension UIView {
             return convert(point, to: view)
         }
     }
-    
-    
+
     /// 将一个点从一个指定视图或窗口的坐标系转换到当前视图坐标系
     ///
     /// 当参数view为nil的时候，系统会自动帮你转换为当前窗口的基本坐标系（即view参数为整个屏幕，原点为(0,0)，宽高是屏幕的宽高）
@@ -327,9 +318,10 @@ public extension UIView {
                 return convert(point, from: nil)
             }
         }
-        
+
         if let from = view.isKind(of: UIWindow.self) ? (view as! UIWindow) : view.window,
-            let to = isKind(of: UIWindow.self) ? (self as! UIWindow) : window, from != to {
+           let to = isKind(of: UIWindow.self) ? (self as! UIWindow) : window, from != to
+        {
             var p = point
             p = from.convert(p, from: view)
             p = to.convert(p, from: from)
@@ -339,8 +331,7 @@ public extension UIView {
             return convert(point, from: nil)
         }
     }
-    
-    
+
     /// 将一个矩形区域从当前视图坐标系转换到指定视图或窗口坐标系
     ///
     /// 使用方法：
@@ -364,9 +355,10 @@ public extension UIView {
                 return convert(rect, to: nil)
             }
         }
-        
+
         if let from = isKind(of: UIWindow.self) ? (self as! UIWindow) : window,
-            let to = view.isKind(of: UIWindow.self) ? (view as! UIWindow) : view.window, from != to {
+           let to = view.isKind(of: UIWindow.self) ? (view as! UIWindow) : view.window, from != to
+        {
             var r = rect
             r = convert(r, to: from)
             r = to.convert(rect, to: from)
@@ -376,8 +368,7 @@ public extension UIView {
             return convert(rect, to: view)
         }
     }
-    
-    
+
     /// 将一个矩形区域从指定视图坐标系转换到当前视图或窗口坐标系
     ///
     /// 使用方法：
@@ -401,9 +392,10 @@ public extension UIView {
                 return convert(rect, from: nil)
             }
         }
-        
+
         if let from = view.isKind(of: UIWindow.self) ? (view as! UIWindow) : view.window,
-            let to = isKind(of: UIWindow.self) ? (self as! UIWindow) : window, from != to {
+           let to = isKind(of: UIWindow.self) ? (self as! UIWindow) : window, from != to
+        {
             var r = rect
             r = from.convert(r, from: view)
             r = to.convert(r, from: from)
@@ -413,7 +405,7 @@ public extension UIView {
             return convert(rect, from: view)
         }
     }
-    
+
     /// 添加阴影
     ///
     /// - Parameters:

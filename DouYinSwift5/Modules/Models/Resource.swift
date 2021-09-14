@@ -14,10 +14,9 @@ struct Resource: HandyJSON {
     var urlList: [String]?
     var width: Int?
     var height: Int?
-    
+
     mutating func mapping(mapper: HelpingMapper) {
-        
         mapper <<<
-            self.urlList <-- "url_list"
+            urlList <-- "url_list"
     }
 }

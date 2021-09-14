@@ -181,8 +181,7 @@ extension CommentListViewController {
 }
 
 extension CommentListViewController {
-    @objc private func closeKeyboard() {
-    }
+    @objc private func closeKeyboard() {}
 
     @objc private func panGestureHandler(pan: UIPanGestureRecognizer) {
         if tableView.isDragging {
@@ -207,7 +206,7 @@ extension CommentListViewController {
                 return
             }
             // 如果去掉这段代码,会出现 突然往下跳动, 具体现象可以,注释掉这部分代码
-            if contentOffset.y == 0.0 && !panGestureEnable {
+            if contentOffset.y == 0.0, !panGestureEnable {
                 panGestureEnable = true
                 pan.setTranslation(.zero, in: pan.view)
                 return
@@ -246,7 +245,7 @@ extension CommentListViewController: UIScrollViewDelegate {
     // 关键点: 当 tableView 下滑到顶以后, 交由 containerView 的手势处理
     // 这样就不需要下滑到顶以后,需要松开手指 再次触发手势
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y <= -scrollView.contentInset.top && scrollView.panGestureRecognizer.state == .changed {
+        if scrollView.contentOffset.y <= -scrollView.contentInset.top, scrollView.panGestureRecognizer.state == .changed {
             print("tableview top")
             scrollView.panGestureRecognizer.state = .ended
             scrollView.setContentOffset(.zero, animated: false)
@@ -256,14 +255,14 @@ extension CommentListViewController: UIScrollViewDelegate {
 }
 
 extension CommentListViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(_: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith _: UIGestureRecognizer) -> Bool {
         // 关键点: 允许同时识别多个手势
         return true
     }
 }
 
 extension CommentListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         100
     }
 

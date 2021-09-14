@@ -25,36 +25,36 @@ struct Music: HandyJSON {
     var isOriginal: Bool?
     var userCount: Int = 0
     var duration: Int = 0
-    
+
     mutating func mapping(mapper: HelpingMapper) {
         mapper <<<
-            self.idStr <-- "id_str"
-        
+            idStr <-- "id_str"
+
         mapper <<<
-            self.coverHd <-- "cover_hd"
-        
+            coverHd <-- "cover_hd"
+
         mapper <<<
-            self.coverLarge <-- "cover_large"
-        
+            coverLarge <-- "cover_large"
+
         mapper <<<
-            self.coverMedium <-- "cover_medium"
-        
+            coverMedium <-- "cover_medium"
+
         mapper <<<
-            self.coverThumb <-- "cover_thumb"
-        
+            coverThumb <-- "cover_thumb"
+
         mapper <<<
-            self.playUrl <-- "play_url"
-        
+            playUrl <-- "play_url"
+
         mapper <<<
-            self.ownerId <-- "owner_id"
-        
+            ownerId <-- "owner_id"
+
         mapper <<<
-            self.ownerNickname <-- "owner_nickname"
-        
+            ownerNickname <-- "owner_nickname"
+
         mapper <<<
-            self.isOriginal <-- "is_original"
-        
+            isOriginal <-- "is_original"
+
         mapper <<<
-            self.userCount <-- "user_count"
+            userCount <-- "user_count"
     }
 }

@@ -42,7 +42,7 @@
 		B53641EC24C9A284001869FC /* Aweme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53641E524C9A284001869FC /* Aweme.swift */; };
 		B53641EE24C9A69D001869FC /* VideoFeedCellMusicBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53641ED24C9A69D001869FC /* VideoFeedCellMusicBtn.swift */; };
 		B53641F024C9A859001869FC /* CALayer+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53641EF24C9A859001869FC /* CALayer+Ext.swift */; };
-		B53641F224CA7C62001869FC /* VideoFeedCellBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53641F124CA7C62001869FC /* VideoFeedCellBtn.swift */; };
+		B53641F224CA7C62001869FC /* VideoFeedCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53641F124CA7C62001869FC /* VideoFeedCellButton.swift */; };
 		B53641F424CA889A001869FC /* LottieResources in Resources */ = {isa = PBXBuildFile; fileRef = B53641F324CA889A001869FC /* LottieResources */; };
 		B53641F624CA8E58001869FC /* VideoFeedCellMusicAlbumNameBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53641F524CA8E57001869FC /* VideoFeedCellMusicAlbumNameBtn.swift */; };
 		B53641F824CA94EA001869FC /* ZLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53641F724CA94EA001869FC /* ZLabel.swift */; };
@@ -107,7 +107,7 @@
 		B53641E524C9A284001869FC /* Aweme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aweme.swift; sourceTree = "<group>"; };
 		B53641ED24C9A69D001869FC /* VideoFeedCellMusicBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedCellMusicBtn.swift; sourceTree = "<group>"; };
 		B53641EF24C9A859001869FC /* CALayer+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Ext.swift"; sourceTree = "<group>"; };
-		B53641F124CA7C62001869FC /* VideoFeedCellBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedCellBtn.swift; sourceTree = "<group>"; };
+		B53641F124CA7C62001869FC /* VideoFeedCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedCellButton.swift; sourceTree = "<group>"; };
 		B53641F324CA889A001869FC /* LottieResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LottieResources; sourceTree = "<group>"; };
 		B53641F524CA8E57001869FC /* VideoFeedCellMusicAlbumNameBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFeedCellMusicAlbumNameBtn.swift; sourceTree = "<group>"; };
 		B53641F724CA94EA001869FC /* ZLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLabel.swift; sourceTree = "<group>"; };
@@ -281,7 +281,7 @@
 				B53641D124C9794B001869FC /* VideoFeedCell.swift */,
 				B53641D324C99EC1001869FC /* PlayerView.swift */,
 				B53641ED24C9A69D001869FC /* VideoFeedCellMusicBtn.swift */,
-				B53641F124CA7C62001869FC /* VideoFeedCellBtn.swift */,
+				B53641F124CA7C62001869FC /* VideoFeedCellButton.swift */,
 				B53641F524CA8E57001869FC /* VideoFeedCellMusicAlbumNameBtn.swift */,
 				B5393B7A24CFF1EB00AA6F58 /* PageContainScrollView.swift */,
 				B5393B8024CFF55F00AA6F58 /* PageSegmentView.swift */,
@@ -500,7 +500,7 @@
 				B53641EB24C9A284001869FC /* Video.swift in Sources */,
 				B53641AB24C92C54001869FC /* NavigationController.swift in Sources */,
 				B53641F024C9A859001869FC /* CALayer+Ext.swift in Sources */,
-				B53641F224CA7C62001869FC /* VideoFeedCellBtn.swift in Sources */,
+				B53641F224CA7C62001869FC /* VideoFeedCellButton.swift in Sources */,
 				B53641B124C92F44001869FC /* UIColor+Ext.swift in Sources */,
 				B53641C624C94ABD001869FC /* UIWindow+Ext.swift in Sources */,
 				B53641FA24CA9885001869FC /* VideoListViewModel.swift in Sources */,

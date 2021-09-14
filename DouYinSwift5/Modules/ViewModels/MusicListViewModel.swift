@@ -10,8 +10,8 @@ import Foundation
 
 class MusicListViewModel {
     var list = [MusicCellViewModel]()
-    
-    public func loadData(success: @escaping ()->Void) {
+
+    public func loadData(success: @escaping () -> Void) {
         let path = "UserMusicList.json"
         guard let filePath = Bundle.main.path(forResource: path, ofType: nil) else {
             return
@@ -23,13 +23,12 @@ class MusicListViewModel {
             let json = String(data: prettyData, encoding: .utf8) ?? String(data: data, encoding: .utf8) ?? ""
             print(json)
             let arr = [Music].deserialize(from: json, designatedPath: "music") as! [Music]
-            arr.forEach { (a) in
+            arr.forEach { a in
                 list.append(MusicCellViewModel(music: a))
             }
             success()
-        } catch  {
+        } catch {
             debugPrint("获取.json异常")
         }
     }
-
 }
