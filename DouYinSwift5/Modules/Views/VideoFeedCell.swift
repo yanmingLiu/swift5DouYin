@@ -35,7 +35,7 @@ class VideoFeedCell: UITableViewCell {
 
     public var onDidSelectCommentButton: ((_ cell: VideoFeedCell, _ viewModel: VideoCellViewModel) -> Void)?
 
-    private let avatarImage = UIImage(named: "img_find_default")
+    private let avatarImage = R.image.img_find_default()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -149,7 +149,7 @@ extension VideoFeedCell {
     /// 背景图片
     func addBackgroundImage() {
         let backgroundImage = UIImageView()
-        backgroundImage.image = UIImage(named: "img_video_loading_max375x685")
+        backgroundImage.image = R.image.img_video_loading_max375x685()
         backgroundImage.contentMode = .scaleAspectFill
         contentView.addSubview(backgroundImage)
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
@@ -162,7 +162,7 @@ extension VideoFeedCell {
     /// 暂停图片
     func addPlayImage() {
         playImage = UIImageView()
-        playImage.image = UIImage(named: "icon_play_pause52x62")
+        playImage.image = R.image.icon_play_pause52x62()
         contentView.addSubview(playImage)
         playImage.translatesAutoresizingMaskIntoConstraints = false
         playImage.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 0).isActive = true
@@ -193,7 +193,7 @@ extension VideoFeedCell {
     /// 分享按钮
     func addShareBtn() {
         shareBtn = VideoFeedCellButton()
-        shareBtn.imageView.image = UIImage(named: "icon_home_share40x40")
+        shareBtn.imageView.image = R.image.icon_home_share40x40()
         shareBtn.addTarget(self, action: #selector(shareAction), for: .touchUpInside)
         contentView.addSubview(shareBtn)
         shareBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -204,7 +204,7 @@ extension VideoFeedCell {
     /// 评论按钮
     func addCommentBtn() {
         commentBtn = VideoFeedCellButton()
-        commentBtn.imageView.image = UIImage(named: "icon_home_comment40x40")
+        commentBtn.imageView.image = R.image.icon_home_share40x40()
         commentBtn.addTarget(self, action: #selector(commentAction), for: .touchUpInside)
         contentView.addSubview(commentBtn)
         commentBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -276,7 +276,7 @@ extension VideoFeedCell {
     /// 音乐icon 名字
     func addMusicName() {
         musicIcon = UIImageView()
-        musicIcon.image = UIImage(named: "icon_home_musicnote3")
+        musicIcon.image = R.image.icon_home_musicnote3()
         contentView.addSubview(musicIcon)
         musicName = VideoFeedCellMusicAlbumNameBtn()
         contentView.addSubview(musicName)

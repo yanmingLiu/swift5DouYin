@@ -43,7 +43,7 @@ class VideoViewCell: UICollectionViewCell {
         coverImage.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
         coverImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
 
-        let likeIcon = UIImageView(image: UIImage(named: "icon_home_likenum"))
+        let likeIcon = UIImageView(image: R.image.icon_home_likenum())
         addSubview(likeIcon)
         likeIcon.translatesAutoresizingMaskIntoConstraints = false
         likeIcon.leftAnchor.constraint(equalTo: leftAnchor, constant: 8).isActive = true

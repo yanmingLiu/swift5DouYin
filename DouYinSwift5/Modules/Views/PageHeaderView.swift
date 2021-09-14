@@ -178,7 +178,7 @@ extension PageHeaderView {
         tagStack.spacing = 4
         nickNameStack.addArrangedSubview(tagStack)
 
-        let douyinTagIcon = UIImageView(image: UIImage(named: "im_musicianVerified20x20"))
+        let douyinTagIcon = UIImageView(image: R.image.im_musicianVerified20x20())
         douyinTagIcon.widthAnchor.constraint(equalToConstant: 12).isActive = true
         douyinTagIcon.heightAnchor.constraint(equalToConstant: 12).isActive = true
 
@@ -187,7 +187,7 @@ extension PageHeaderView {
         douyInLabel.font = .systemFont(ofSize: 14)
         douyInLabel.textColor = UIColor.white
 
-        let toutiaoTagIcon = UIImageView(image: UIImage(named: "iconProfileToutiao20x20"))
+        let toutiaoTagIcon = UIImageView(image: R.image.iconProfileToutiao20x20())
         toutiaoTagIcon.widthAnchor.constraint(equalToConstant: 12).isActive = true
         toutiaoTagIcon.heightAnchor.constraint(equalToConstant: 12).isActive = true
 

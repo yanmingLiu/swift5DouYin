@@ -23,11 +23,10 @@ class UserFollowBtn: UIControl {
     }
 
     func setUpUI() {
-//        backgroundColor = UIColor("393B44")
         backgroundColor = UIColor.hexString("FE2C55")
         let stackView = UIStackView()
         icon = UIImageView()
-        icon.image = UIImage(named: "playlist_button_follow22x22")
+        icon.image = R.image.playlist_button_follow22x22()
         label = UILabel()
         label.text = "关注"
         label.font = .systemFont(ofSize: 14)

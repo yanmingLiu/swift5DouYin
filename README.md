@@ -35,3 +35,6 @@ Lottie加载并渲染以bodymovin JSON格式导出的动画和矢量。Bodymovin
 
 [Kingfisher - 图片加载框架](https://github.com/onevcat/Kingfisher)
 
+[R.swift](https://github.com/mac-cain13/R.swift)
+
+[SwiftFormat- 对代码进行格式化](https://github.com/nicklockwood/SwiftFormat)

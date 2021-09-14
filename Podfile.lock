@@ -10,6 +10,9 @@ PODS:
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
+  - R.swift (5.4.0):
+    - R.swift.Library (~> 5.3.0)
+  - R.swift.Library (5.3.0)
 
 DEPENDENCIES:
   - HandyJSON
@@ -17,6 +20,7 @@ DEPENDENCIES:
   - LookinServer
   - lottie-ios
   - Moya
+  - R.swift
 
 SPEC REPOS:
   trunk:
@@ -26,6 +30,8 @@ SPEC REPOS:
     - LookinServer
     - lottie-ios
     - Moya
+    - R.swift
+    - R.swift.Library
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
@@ -34,7 +40,9 @@ SPEC CHECKSUMS:
   LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  R.swift: c533450b0f7dc494e0993f5f1a1db925d84c3006
+  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
 
-PODFILE CHECKSUM: d3aaba7bfd8c8fce95a01f4d6778e08c35031a20
+PODFILE CHECKSUM: 7ab3efebd9577e52a85618ac1984b57e55f3e85d
 
 COCOAPODS: 1.10.1

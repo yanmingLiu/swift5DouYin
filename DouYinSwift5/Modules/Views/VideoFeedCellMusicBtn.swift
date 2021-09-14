@@ -30,7 +30,7 @@ class VideoFeedCellMusicBtn: UIControl {
     }
 
     func setUpUI() {
-        musicDiscImage.image = UIImage(named: "music_cover")
+        musicDiscImage.image = R.image.music_cover()
         addSubview(musicDiscImage)
         musicDiscImage.translatesAutoresizingMaskIntoConstraints = false
         musicDiscImage.topAnchor.constraint(equalTo: topAnchor).isActive = true

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		002214A7CC187A74F409A05C /* Pods_DouYinSwift5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19463ABBD09E8235664EF815 /* Pods_DouYinSwift5.framework */; };
+		38116A1626F08586002495F9 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38116A1526F08586002495F9 /* R.generated.swift */; };
 		3889E522266F98D600382DF7 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3889E521266F98D600382DF7 /* UITableView+Ext.swift */; };
 		38992AB526D767A000AD5094 /* CommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38992AB426D767A000AD5094 /* CommentListViewController.swift */; };
 		38992AB726D76CB200AD5094 /* CommentListViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38992AB626D76CB200AD5094 /* CommentListViewHeaderView.swift */; };
@@ -70,6 +71,7 @@
 
 /* Begin PBXFileReference section */
 		19463ABBD09E8235664EF815 /* Pods_DouYinSwift5.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouYinSwift5.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38116A1526F08586002495F9 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		3889E521266F98D600382DF7 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		38992AB426D767A000AD5094 /* CommentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListViewController.swift; sourceTree = "<group>"; };
 		38992AB626D76CB200AD5094 /* CommentListViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListViewHeaderView.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				B53641BA24C93CA5001869FC /* README.md */,
+				38116A1526F08586002495F9 /* R.generated.swift */,
 				B536419124C92B34001869FC /* DouYinSwift5 */,
 				B536419024C92B34001869FC /* Products */,
 				105E6848D974829334F53E78 /* Pods */,
@@ -359,6 +362,7 @@
 			buildConfigurationList = B53641A324C92B39001869FC /* Build configuration list for PBXNativeTarget "DouYinSwift5" */;
 			buildPhases = (
 				8599422716F3AAC9C41BDC3E /* [CP] Check Pods Manifest.lock */,
+				3811698E26F081FE002495F9 /* ShellScript */,
 				B536418B24C92B34001869FC /* Sources */,
 				B536418C24C92B34001869FC /* Frameworks */,
 				B536418D24C92B34001869FC /* Resources */,
@@ -428,6 +432,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3811698E26F081FE002495F9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"",
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		8599422716F3AAC9C41BDC3E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -485,6 +509,7 @@
 				B53641C224C94868001869FC /* Bundle+Ext.swift in Sources */,
 				B5393B8324CFF72A00AA6F58 /* MusicListController.swift in Sources */,
 				B5393B7F24CFF51500AA6F58 /* PageHeaderView.swift in Sources */,
+				38116A1626F08586002495F9 /* R.generated.swift in Sources */,
 				B53641CD24C96A9A001869FC /* BaseViewController.swift in Sources */,
 				B5393B7924CFED9300AA6F58 /* UserPageViewController.swift in Sources */,
 				38992AB726D76CB200AD5094 /* CommentListViewHeaderView.swift in Sources */,

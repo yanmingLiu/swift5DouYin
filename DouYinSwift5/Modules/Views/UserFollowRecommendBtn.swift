@@ -24,7 +24,7 @@ class UserFollowRecommendBtn: UIControl {
     func setUpUI() {
         backgroundColor = UIColor.hexString("393B44")
 
-        icon = UIImageView(image: UIImage(named: "playlist_top_arrow14x14"))
+        icon = UIImageView(image: R.image.playlist_top_arrow14x14())
         addSubview(icon)
         icon.translatesAutoresizingMaskIntoConstraints = false
         icon.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true

@@ -63,7 +63,7 @@ class UserPageViewController: BaseViewController {
         }
 
         let returnBtn = UIButton(type: .system)
-        returnBtn.setImage(UIImage(named: "return_icon40x40")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        returnBtn.setImage(R.image.return_icon40x40()?.withRenderingMode(.alwaysOriginal), for: .normal)
         returnBtn.addTarget(self, action: #selector(backAction), for: .touchUpInside)
         view.addSubview(returnBtn)
         returnBtn.translatesAutoresizingMaskIntoConstraints = false

@@ -16,5 +16,6 @@ target 'DouYinSwift5' do
   pod 'Moya'
   pod 'HandyJSON'
   pod 'Kingfisher'
-
+  pod 'R.swift'
+  
 end

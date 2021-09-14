@@ -37,7 +37,7 @@ class MusicViewCell: UITableViewCell {
         contentView.backgroundColor = .clear
 
         playBtn = UIButton(type: .custom)
-        playBtn.setImage(UIImage(named: "icon_playmusic30x30"), for: .normal)
+        playBtn.setImage(R.image.icon_playmusic30x30(), for: .normal)
         contentView.addSubview(playBtn)
         playBtn.translatesAutoresizingMaskIntoConstraints = false
         playBtn.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
@@ -45,7 +45,7 @@ class MusicViewCell: UITableViewCell {
         playBtn.widthAnchor.constraint(equalToConstant: 70).isActive = true
         playBtn.heightAnchor.constraint(equalToConstant: 70).isActive = true
 
-        let icon = UIImageView(image: UIImage(named: "icon_home_original_musicnote16x16"))
+        let icon = UIImageView(image: R.image.icon_home_original_musicnote16x16())
         contentView.addSubview(icon)
         icon.translatesAutoresizingMaskIntoConstraints = false
         icon.topAnchor.constraint(equalTo: playBtn.topAnchor, constant: 4).isActive = true
@@ -86,10 +86,10 @@ class MusicViewCell: UITableViewCell {
         btnStack.topAnchor.constraint(equalTo: playBtn.topAnchor, constant: 5).isActive = true
 
         let collectionBtn = UIButton(type: .system)
-        collectionBtn.setImage(UIImage(named: "icon_white_nocollection24x24")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        collectionBtn.setImage(R.image.icon_white_nocollection24x24()?.withRenderingMode(.alwaysOriginal), for: .normal)
 
         let detailBtn = UIButton(type: .system)
-        detailBtn.setImage(UIImage(named: "icon_ost_detail24x24")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        detailBtn.setImage(R.image.icon_ost_detail24x24()?.withRenderingMode(.alwaysOriginal), for: .normal)
 
         btnStack.addArrangedSubview(collectionBtn)
         btnStack.addArrangedSubview(detailBtn)
