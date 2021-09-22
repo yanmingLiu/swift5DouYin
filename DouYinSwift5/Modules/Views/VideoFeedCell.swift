@@ -204,7 +204,7 @@ extension VideoFeedCell {
     /// 评论按钮
     func addCommentBtn() {
         commentBtn = VideoFeedCellButton()
-        commentBtn.imageView.image = R.image.icon_home_share40x40()
+        commentBtn.imageView.image = R.image.icon_home_comment40x40()
         commentBtn.addTarget(self, action: #selector(commentAction), for: .touchUpInside)
         contentView.addSubview(commentBtn)
         commentBtn.translatesAutoresizingMaskIntoConstraints = false
