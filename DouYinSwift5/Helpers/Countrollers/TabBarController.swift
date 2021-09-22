@@ -29,7 +29,7 @@ class TabBarController: UITabBarController {
         let childClassNames = [
             ["vc": "VideoFeedController", "title": "首页", "count": 0],
             ["vc": "TimeLineController", "title": "关注", "count": 0],
-            ["vc": "", "image": "btn_home_add75x49", "count": 0],
+            ["vc": "", "image": "button_home_add75x49", "count": 0],
             ["vc": "", "title": "消息", "count": 0],
             ["vc": "", "title": "我", "count": 0],
         ]
@@ -202,25 +202,25 @@ class AddItem: UIControl, TabbarItem {
 }
 
 class TitleItem: UIView, TabbarItem {
-    var btn: UIButton!
+    var button: UIButton!
     var indicatorView: UIView!
-    var bage: PaddingLabel!
+    var badge: PaddingLabel!
     var title: String = ""
 
     var count: Int = 0 {
         didSet {
-            bage.isHidden = count <= 0
-            bage.text = "\(count)"
+            badge.isHidden = count <= 0
+            badge.text = "\(count)"
         }
     }
 
     var selectedStatus: Bool = false {
         didSet {
             if selectedStatus {
-                btn.isSelected = true
+                button.isSelected = true
                 indicatorView.isHidden = false
             } else {
-                btn.isSelected = false
+                button.isSelected = false
                 indicatorView.isHidden = true
             }
         }
@@ -239,18 +239,18 @@ class TitleItem: UIView, TabbarItem {
     }
 
     func setUpUI() {
-        btn = UIButton(type: .custom)
-        btn.setTitle(title, for: .normal)
+        button = UIButton(type: .custom)
+        button.setTitle(title, for: .normal)
         let normalStr = NSAttributedString(string: title, attributes: [NSAttributedString.Key.font: tabBarNormalFont, NSAttributedString.Key.foregroundColor: UIColor(white: 1, alpha: 0.6)])
-        btn.setAttributedTitle(normalStr, for: .normal)
+        button.setAttributedTitle(normalStr, for: .normal)
         let selectedStr = NSAttributedString(string: title, attributes: [NSAttributedString.Key.font: tabBarSelectFont, NSAttributedString.Key.foregroundColor: UIColor.white])
-        btn.setAttributedTitle(selectedStr, for: .selected)
-        addSubview(btn)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        btn.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        btn.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        btn.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        button.setAttributedTitle(selectedStr, for: .selected)
+        addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        button.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        button.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        button.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
 
         indicatorView = UIView()
         indicatorView.backgroundColor = UIColor.white
@@ -258,28 +258,28 @@ class TitleItem: UIView, TabbarItem {
         addSubview(indicatorView)
         indicatorView.isHidden = true
         indicatorView.translatesAutoresizingMaskIntoConstraints = false
-        indicatorView.centerXAnchor.constraint(equalTo: btn.centerXAnchor).isActive = true
+        indicatorView.centerXAnchor.constraint(equalTo: button.centerXAnchor).isActive = true
         indicatorView.heightAnchor.constraint(equalToConstant: 2).isActive = true
         indicatorView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        guard let title = btn.title(for: .normal) else { return }
+        guard let title = button.title(for: .normal) else { return }
         let titleW = title.width(for: tabBarSelectFont)
         indicatorView.widthAnchor.constraint(equalToConstant: titleW).isActive = true
 
-        bage = PaddingLabel(frame: .zero)
-        bage.padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
-        bage.isHidden = true
-        bage.textColor = themeColor
-        bage.backgroundColor = bageColor
-        bage.font = .boldSystemFont(ofSize: 10)
-        bage.clipsToBounds = true
-        bage.cornerRadius = 8
-        bage.textAlignment = .center
-        bage.sizeToFit()
-        addSubview(bage)
-        bage.translatesAutoresizingMaskIntoConstraints = false
-        bage.widthAnchor.constraint(greaterThanOrEqualToConstant: 16).isActive = true
-        bage.heightAnchor.constraint(equalToConstant: 16).isActive = true
-        bage.rightAnchor.constraint(equalTo: btn.rightAnchor, constant: -5).isActive = true
-        bage.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
+        badge = PaddingLabel(frame: .zero)
+        badge.padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        badge.isHidden = true
+        badge.textColor = themeColor
+        badge.backgroundColor = badgeColor
+        badge.font = .boldSystemFont(ofSize: 10)
+        badge.clipsToBounds = true
+        badge.cornerRadius = 8
+        badge.textAlignment = .center
+        badge.sizeToFit()
+        addSubview(badge)
+        badge.translatesAutoresizingMaskIntoConstraints = false
+        badge.widthAnchor.constraint(greaterThanOrEqualToConstant: 16).isActive = true
+        badge.heightAnchor.constraint(equalToConstant: 16).isActive = true
+        badge.rightAnchor.constraint(equalTo: button.rightAnchor, constant: -5).isActive = true
+        badge.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
     }
 }

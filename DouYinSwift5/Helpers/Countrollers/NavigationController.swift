@@ -59,19 +59,21 @@ class NavigationController: UINavigationController {
         pan.addTarget(target, action: action)
         pan.delegate = self
     }
+}
 
-    // 保留系统手势
+extension NavigationController {
+    /// 保留系统手势
     func disabledFullScreenPan() {
         pan.isEnabled = false
         interactivePopGestureRecognizer?.delegate = self
     }
 
-    // 关闭全屏 和 系统
+    /// 关闭全屏 和 系统
     func disabledPopGesture() {
         pan.isEnabled = false
     }
 
-    // 开启全屏
+    /// 开启全屏
     func enabledFullScreenPan() {
         pan.isEnabled = true
     }
@@ -119,7 +121,7 @@ extension UIScrollView: UIGestureRecognizerDelegate {
             // 设置手势滑动的位置距屏幕左边的区域
             let locationDistance = UIScreen.main.bounds.size.width
 
-            if state == UIGestureRecognizer.State.began || state == UIGestureRecognizer.State.possible {
+            if state == .began || state == .possible {
                 let location = gestureRecognizer.location(in: self)
                 if point.x > 0, location.x < locationDistance, contentOffset.x <= 0 {
                     return true

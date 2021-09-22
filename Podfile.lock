@@ -1,11 +1,9 @@
 PODS:
-  - Alamofire (5.2.1)
+  - Alamofire (5.4.3)
   - HandyJSON (5.0.2)
-  - Kingfisher (5.14.1):
-    - Kingfisher/Core (= 5.14.1)
-  - Kingfisher/Core (5.14.1)
-  - LookinServer (1.0.0)
-  - lottie-ios (3.1.8)
+  - Kingfisher (6.3.0)
+  - LookinServer (1.0.3)
+  - lottie-ios (3.2.3)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -34,11 +32,11 @@ SPEC REPOS:
     - R.swift.Library
 
 SPEC CHECKSUMS:
-  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
-  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
-  LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
-  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
+  Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
+  LookinServer: 5e1d44b7e4a2a98793f1eaf319c583e1e946b830
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   R.swift: c533450b0f7dc494e0993f5f1a1db925d84c3006
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
