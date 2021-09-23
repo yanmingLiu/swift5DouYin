@@ -29,7 +29,7 @@ class TabBarController: UITabBarController {
         let childClassNames = [
             ["vc": "VideoFeedController", "title": "首页", "count": 0],
             ["vc": "TimeLineController", "title": "关注", "count": 0],
-            ["vc": "", "image": "button_home_add75x49", "count": 0],
+            ["vc": "", "image": "btn_home_add75x49", "count": 0],
             ["vc": "", "title": "消息", "count": 0],
             ["vc": "", "title": "我", "count": 0],
         ]
