@@ -2,6 +2,12 @@
 
 swift5仿写抖音, 资源都是本地的json文件，加上已经有大神开源了非常优秀的抖音仿写项目，本工程也copy不少了其他项目的代码，只是纯学习用途，无其它用途。
 
+![](https://github.com/yanmingLiu/swift5DouYin/blob/master/Gifs/1_.gif) 
+
+![](https://github.com/yanmingLiu/swift5DouYin/blob/master/Gifs/2_.gif) 
+
+![](https://github.com/yanmingLiu/swift5DouYin/blob/master/Gifs/3_.gif) 
+
 [moya + handJson 网络请求的demo在这里](https://github.com/yanmingLiu/MoyaHandyJSONNetworking)
 
 评论列表实现：
