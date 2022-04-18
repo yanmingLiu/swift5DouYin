@@ -13,6 +13,9 @@
 		38992AB526D767A000AD5094 /* CommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38992AB426D767A000AD5094 /* CommentListViewController.swift */; };
 		38992AB726D76CB200AD5094 /* CommentListViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38992AB626D76CB200AD5094 /* CommentListViewHeaderView.swift */; };
 		38992B3D26D780EB00AD5094 /* CommentListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38992B3C26D780EB00AD5094 /* CommentListTableView.swift */; };
+		38C0783F280D0A500032DC9F /* 1_.gif in Resources */ = {isa = PBXBuildFile; fileRef = 38C0783C280D0A4F0032DC9F /* 1_.gif */; };
+		38C07840280D0A500032DC9F /* 2_.gif in Resources */ = {isa = PBXBuildFile; fileRef = 38C0783D280D0A4F0032DC9F /* 2_.gif */; };
+		38C07841280D0A500032DC9F /* 3_.gif in Resources */ = {isa = PBXBuildFile; fileRef = 38C0783E280D0A500032DC9F /* 3_.gif */; };
 		38F6B1D6259DAE8A00C9A531 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F6B1D5259DAE8A00C9A531 /* Tools.swift */; };
 		B536419324C92B34001869FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536419224C92B34001869FC /* AppDelegate.swift */; };
 		B536419C24C92B39001869FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B536419B24C92B39001869FC /* Assets.xcassets */; };
@@ -76,6 +79,9 @@
 		38992AB426D767A000AD5094 /* CommentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListViewController.swift; sourceTree = "<group>"; };
 		38992AB626D76CB200AD5094 /* CommentListViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListViewHeaderView.swift; sourceTree = "<group>"; };
 		38992B3C26D780EB00AD5094 /* CommentListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListTableView.swift; sourceTree = "<group>"; };
+		38C0783C280D0A4F0032DC9F /* 1_.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1_.gif; sourceTree = "<group>"; };
+		38C0783D280D0A4F0032DC9F /* 2_.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2_.gif; sourceTree = "<group>"; };
+		38C0783E280D0A500032DC9F /* 3_.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3_.gif; sourceTree = "<group>"; };
 		38F6B1D5259DAE8A00C9A531 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		7453130D6578AEF0A9A5FA12 /* Pods-DouYinSwift5.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYinSwift5.release.xcconfig"; path = "Target Support Files/Pods-DouYinSwift5/Pods-DouYinSwift5.release.xcconfig"; sourceTree = "<group>"; };
 		B536418F24C92B34001869FC /* DouYinSwift5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYinSwift5.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +163,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		38C0783B280D0A390032DC9F /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				38C0783C280D0A4F0032DC9F /* 1_.gif */,
+				38C0783D280D0A4F0032DC9F /* 2_.gif */,
+				38C0783E280D0A500032DC9F /* 3_.gif */,
+			);
+			path = Gifs;
+			sourceTree = "<group>";
+		};
 		38F6B1D4259DAE7E00C9A531 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +184,7 @@
 		B536418624C92B34001869FC = {
 			isa = PBXGroup;
 			children = (
+				38C0783B280D0A390032DC9F /* Gifs */,
 				B53641BA24C93CA5001869FC /* README.md */,
 				38116A1526F08586002495F9 /* R.generated.swift */,
 				B536419124C92B34001869FC /* DouYinSwift5 */,
@@ -417,13 +434,16 @@
 				B5393B7724CC791600AA6F58 /* UserFavoriteList.json in Resources */,
 				B5393B7424CC791600AA6F58 /* User.json in Resources */,
 				B5393B7624CC791600AA6F58 /* Feed1.json in Resources */,
+				38C07840280D0A500032DC9F /* 2_.gif in Resources */,
 				B53641BB24C93CA5001869FC /* README.md in Resources */,
 				B5393B7124CC791600AA6F58 /* UserFavoritesList.json in Resources */,
 				B5393B7524CC791600AA6F58 /* UserTimeline.json in Resources */,
+				38C0783F280D0A500032DC9F /* 1_.gif in Resources */,
 				B5393B7324CC791600AA6F58 /* UserVideoList.json in Resources */,
 				B5393B7224CC791600AA6F58 /* UserMusicList.json in Resources */,
 				B536419F24C92B39001869FC /* LaunchScreen.storyboard in Resources */,
 				B536419C24C92B39001869FC /* Assets.xcassets in Resources */,
+				38C07841280D0A500032DC9F /* 3_.gif in Resources */,
 				B53641F424CA889A001869FC /* LottieResources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
