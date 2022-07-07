@@ -11,6 +11,7 @@ PODS:
   - R.swift (5.4.0):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
+  - YMExtension (0.2.1)
 
 DEPENDENCIES:
   - HandyJSON
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - lottie-ios
   - Moya
   - R.swift
+  - YMExtension
 
 SPEC REPOS:
   trunk:
@@ -30,6 +32,7 @@ SPEC REPOS:
     - Moya
     - R.swift
     - R.swift.Library
+    - YMExtension
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
@@ -40,7 +43,8 @@ SPEC CHECKSUMS:
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   R.swift: c533450b0f7dc494e0993f5f1a1db925d84c3006
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  YMExtension: bd76de1fafc47ae8307ff8b4c0fcf7b4bce3fa1d
 
-PODFILE CHECKSUM: 7ab3efebd9577e52a85618ac1984b57e55f3e85d
+PODFILE CHECKSUM: b100a126ba59e9b17d50bf6fbc2023c412fa566d
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.3
